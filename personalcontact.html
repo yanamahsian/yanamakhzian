@@ -1,27 +1,22 @@
-<!-- personalcontact.html -->
 <!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Личный контакт — AN.KI</title>
-  <meta name="description" content="Форматы личного контакта AN.KI. Без терапии, сопровождения и обещаний." />
+  <meta name="description" content="Форматы личного контакта AN.KI. Не по времени, а по точности результата." />
 
-  <!-- СТИЛИ: один порядок, без дублей -->
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/design.css" />
 
-  <!-- PWA -->
   <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="theme-color" content="#020616" />
 
-  <!-- JS -->
   <script src="/script.js" defer></script>
 </head>
 
 <body class="personalcontact-page">
 
-  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
       <a class="brand-mini" href="/index.html" aria-label="AN.KI — Главная">
@@ -43,78 +38,557 @@
 
   <aside class="nav-drawer" data-nav-drawer aria-label="Навигация сайта">
     <h3>Навигация</h3>
-
-    <nav class="drawer-nav">
-      <a href="/index.html">Главная</a>
-      <a href="/anki.html">Об учении</a>
-      <a href="/mypath.html">Мой путь</a>
-      <a href="/personalcontact.html">Личный контакт</a>
-      <a href="/workbooks.html">Воркбуки</a>
-      <a href="/art.html">Арт</a>
-      <a href="/aroma.html">Ароматы</a>
-      <a href="/essays.html">Эссе</a>
-      <a href="/artifacts.html">Артефакты AN.KI</a>
-      <a href="/contacts.html">Контакты</a>
-    </nav>
-
-    <div class="drawer-bottom">
-      Все права защищены.
-    </div>
+    <nav class="drawer-nav"></nav>
+    <div class="drawer-bottom">Все права защищены.</div>
   </aside>
 
-  <!-- ФОН (если ты отключишь его в CSS — ничего не сломается) -->
   <canvas id="stars" aria-hidden="true"></canvas>
   <div class="nebula" aria-hidden="true"></div>
 
-  <!-- CONTENT -->
-  <main class="page" role="main">
+  <main class="page fade-in" role="main">
     <h1 class="title">Личный контакт</h1>
-    <p class="subtitle">Здесь нет терапии, сопровождения и обещаний. Есть форматы контакта.</p>
+    <p class="subtitle">Не по времени. Не в формате длительного процесса. По точности.</p>
 
     <div class="manifest" style="margin-top: 10px;">
-      <p>Выбирайте не “под задачу”, а по уровню правды, к которому вы готовы.</p>
+      <p>Я не работаю в формате «созвонов раз в неделю» и не продаю часы. Работа длится столько, сколько требуется, чтобы увидеть структуру и собрать её в ясность.</p>
+      <p>Одна работа может быть достаточной. Не потому что “повезло”, а потому что разбирается не поверхность, а сама конфигурация ситуации.</p>
+      <p>После этого у тебя есть понимание, структура и направление. И ты можешь двигаться дальше сам — без необходимости возвращаться.</p>
+      <p>Я не работаю с длительным проживанием состояний, эмоциональной поддержкой и постепенными изменениями. Я работаю с точкой, структурой и ясностью.</p>
+      <p class="manifest-line">Форматы ниже — это не уровни “лучше/хуже”. Это разные глубины работы.</p>
     </div>
 
-    <!-- GRID -->
-    <section class="panel-grid" aria-label="Форматы контакта" style="margin-top: 22px;">
+    <section class="panel-grid" aria-label="Форматы контакта" style="margin-top: 26px;">
+
+      <article class="panel">
+        <h2>Структурный разбор</h2>
+        <div class="price">800 €</div>
+        <p class="panel-sub">Точка входа. Быстрый срез ситуации, чтобы понять: есть ли реальная задача и стоит ли идти глубже.</p>
+        <div class="panel-actions">
+          <a class="panel-btn" href="/structural-review.html">Открыть</a>
+        </div>
+      </article>
 
       <article class="panel">
         <h2>Точка истины</h2>
         <div class="price">3 000 €</div>
+        <p class="panel-sub">Одна работа. Один заход. Один разворот. Не процесс, а точное структурное попадание.</p>
         <div class="panel-actions">
-          <a class="panel-btn" href="/truth.html">Забронировать</a>
+          <a class="panel-btn" href="/truth.html">Открыть</a>
         </div>
       </article>
 
       <article class="panel">
         <h2>Структурное зрение</h2>
         <div class="price">9 000 €</div>
+        <p class="panel-sub">Уже не разбор, а смена способа видеть себя, людей, процессы и решения как систему.</p>
         <div class="panel-actions">
-          <a class="panel-btn" href="/structure.html">Забронировать</a>
+          <a class="panel-btn" href="/structure.html">Открыть</a>
         </div>
       </article>
 
       <article class="panel">
         <h2>Тихий контакт</h2>
         <div class="price">16 000 €</div>
+        <p class="panel-sub">Минимум слов. Максимум точности. Для тех, кому не нужны объяснения и лишний процесс.</p>
         <div class="panel-actions">
-          <a class="panel-btn" href="/silent.html">Забронировать</a>
+          <a class="panel-btn" href="/silent.html">Открыть</a>
         </div>
       </article>
 
       <article class="panel">
-        <h2>Архитектура системы</h2>
+        <h2>Архитектура систем</h2>
         <div class="price">от 40 000 €</div>
+        <p class="panel-sub">Закрытый уровень работы. Не консультация, а проектирование моделей, которые могут быть реализованы.</p>
         <div class="panel-actions">
-          <!-- Запросить -> контакты (WhatsApp/Telegram) -->
-          <a class="panel-btn" href="/contacts.html">Запросить</a>
+          <a class="panel-btn" href="/architecture.html">Открыть</a>
         </div>
       </article>
 
     </section>
 
-    <div class="back-btn-container">
-      <a class="back-btn" href="/index.html">← На главную</a>
+    <div class="panel-actions" style="margin-top: 22px;">
+      <a class="panel-btn" href="/index.html">На главную</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AN.KI by Yana Makhzian</p>
+  </footer>
+
+</body>
+</html>
+2) structural-review.html
+
+(новая страница для 800 €)
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Структурный разбор — AN.KI</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Структурный разбор — точка входа в работу AN.KI." />
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/design.css" />
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#020616" />
+
+  <script src="/script.js" defer></script>
+</head>
+
+<body class="review-page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-mini" href="/index.html" aria-label="AN.KI — Главная">
+        <img src="/anki-logo.png" alt="AN.KI" />
+        <span>AN.KI</span>
+      </a>
+
+      <button class="burger-btn" type="button" data-burger aria-label="Меню" aria-expanded="false">
+        <span class="burger-icon"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" data-nav-overlay></div>
+
+  <aside class="nav-drawer" data-nav-drawer aria-label="Навигация сайта">
+    <h3>Навигация</h3>
+    <nav class="drawer-nav"></nav>
+    <div class="drawer-bottom">Все права защищены.</div>
+  </aside>
+
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <main class="page fade-in">
+    <p class="back-row">
+      <a class="back-link" href="/personalcontact.html">← Назад</a>
+    </p>
+
+    <h1 class="title">Структурный разбор</h1>
+    <p class="subtitle">Точка входа.</p>
+
+    <div class="manifest">
+      <p><strong>Это не консультация.</strong><br>И не “пробная встреча”. Это быстрый срез ситуации.</p>
+
+      <p><strong>Что происходит</strong></p>
+      <p>Ты приходишь с тем, что у тебя есть:</p>
+      <ul>
+        <li>вопрос</li>
+        <li>тупик</li>
+        <li>ощущение, что что-то не так</li>
+        <li>или просто неясность</li>
+      </ul>
+
+      <p>Я не “разбираю историю”. Я смотрю структуру.</p>
+
+      <p><strong>В процессе</strong></p>
+      <ul>
+        <li>где реальная проблема, а где иллюзия</li>
+        <li>в какой точке ты застрял</li>
+        <li>что именно мешает движению</li>
+        <li>есть ли вообще задача, с которой стоит работать</li>
+      </ul>
+
+      <p><strong>Что ты получаешь</strong></p>
+      <ul>
+        <li>ясность</li>
+        <li>один ключевой узел</li>
+        <li>направление, куда двигаться</li>
+      </ul>
+
+      <p><strong>Важно</strong><br>Это не глубокая работа. Это точка, после которой ты понимаешь: идти дальше или не тратить время.</p>
+
+      <p class="manifest-line">800 €</p>
+    </div>
+
+    <div class="panel-actions">
+      <a class="panel-btn" href="https://revolut.me/oceanosugar" target="_blank" rel="noopener">Забронировать</a>
+      <a class="panel-btn" href="/personalcontact.html">Назад</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AN.KI by Yana Makhzian</p>
+  </footer>
+
+</body>
+</html>
+3) truth.html
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Точка истины — AN.KI</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Точка истины — одна работа, один заход, один разворот." />
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/design.css" />
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#020616" />
+
+  <script src="/script.js" defer></script>
+</head>
+
+<body class="truth-page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-mini" href="/index.html" aria-label="AN.KI — Главная">
+        <img src="/anki-logo.png" alt="AN.KI" />
+        <span>AN.KI</span>
+      </a>
+
+      <button class="burger-btn" type="button" data-burger aria-label="Меню" aria-expanded="false">
+        <span class="burger-icon"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" data-nav-overlay></div>
+
+  <aside class="nav-drawer" data-nav-drawer aria-label="Навигация сайта">
+    <h3>Навигация</h3>
+    <nav class="drawer-nav"></nav>
+    <div class="drawer-bottom">Все права защищены.</div>
+  </aside>
+
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <main class="page fade-in">
+    <p class="back-row">
+      <a class="back-link" href="/personalcontact.html">← Назад</a>
+    </p>
+
+    <h1 class="title">Точка истины</h1>
+    <p class="subtitle">Одна работа. Один заход. Один разворот.</p>
+
+    <div class="manifest">
+      <p><strong>Это не формат “по времени”.</strong><br>Мы не работаем “60 минут” или “полтора часа”. Работа длится столько, сколько требуется, чтобы собрать структуру.</p>
+
+      <p><strong>Что происходит</strong></p>
+      <p>Мы разбираем не симптомы. И не состояния.</p>
+      <ul>
+        <li>как устроена твоя текущая реальность</li>
+        <li>где она даёт сбой</li>
+        <li>где ты действуешь не из своей структуры</li>
+        <li>где ты теряешь направление</li>
+      </ul>
+
+      <p><strong>С чем можно прийти</strong></p>
+      <ul>
+        <li>тупик, несмотря на усилия</li>
+        <li>повторяющиеся сценарии</li>
+        <li>невозможность принять решение</li>
+        <li>расхождение между внутренним и внешним</li>
+        <li>ощущение “живу не свою жизнь”</li>
+      </ul>
+
+      <p><strong>Что ты получаешь</strong></p>
+      <ul>
+        <li>целостную картину</li>
+        <li>понимание структуры ситуации</li>
+        <li>конкретные узлы</li>
+        <li>чёткие направления действий</li>
+      </ul>
+
+      <p><strong>Главное</strong><br>Тебе не нужно “ходить месяцами”. Ты получаешь основу, на которой можно двигаться сразу.</p>
+
+      <p><strong>Это не терапия.</strong><br>Я не работаю через поддержку, проживание и длительное сопровождение. Я работаю через точность, структуру и ясность.</p>
+
+      <p class="manifest-line">3 000 €</p>
+    </div>
+
+    <div class="panel-actions">
+      <a class="panel-btn" href="https://revolut.me/oceanosugar" target="_blank" rel="noopener">Забронировать</a>
+      <a class="panel-btn" href="/personalcontact.html">Назад</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AN.KI by Yana Makhzian</p>
+  </footer>
+
+</body>
+</html>
+4) structure.html
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Структурное зрение — AN.KI</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Структурное зрение — смена уровня восприятия." />
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/design.css" />
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#020616" />
+
+  <script src="/script.js" defer></script>
+</head>
+
+<body class="structure-page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-mini" href="/index.html" aria-label="AN.KI — Главная">
+        <img src="/anki-logo.png" alt="AN.KI" />
+        <span>AN.KI</span>
+      </a>
+
+      <button class="burger-btn" type="button" data-burger aria-label="Меню" aria-expanded="false">
+        <span class="burger-icon"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" data-nav-overlay></div>
+
+  <aside class="nav-drawer" data-nav-drawer aria-label="Навигация сайта">
+    <h3>Навигация</h3>
+    <nav class="drawer-nav"></nav>
+    <div class="drawer-bottom">Все права защищены.</div>
+  </aside>
+
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <main class="page fade-in">
+    <p class="back-row">
+      <a class="back-link" href="/personalcontact.html">← Назад</a>
+    </p>
+
+    <h1 class="title">Структурное зрение</h1>
+    <p class="subtitle">Это уже не разбор. Это смена уровня восприятия.</p>
+
+    <div class="manifest">
+      <p><strong>Что это</strong><br>Работа, в которой ты начинаешь видеть себя, людей, процессы и решения не как набор эмоций, а как систему.</p>
+
+      <p><strong>В процессе</strong></p>
+      <ul>
+        <li>разбираем твою модель мышления</li>
+        <li>перестраиваем способ восприятия</li>
+        <li>убираем искажения</li>
+        <li>собираем новую опору</li>
+      </ul>
+
+      <p><strong>Результат</strong></p>
+      <p>Ты перестаёшь:</p>
+      <ul>
+        <li>путаться</li>
+        <li>сомневаться</li>
+        <li>зависеть от состояния</li>
+      </ul>
+
+      <p>И начинаешь:</p>
+      <ul>
+        <li>видеть</li>
+        <li>понимать</li>
+        <li>принимать решения быстрее</li>
+      </ul>
+
+      <p><strong>Это уровень</strong></p>
+      <ul>
+        <li>предпринимателей</li>
+        <li>стратегов</li>
+        <li>людей, принимающих решения</li>
+      </ul>
+
+      <p class="manifest-line">9 000 €</p>
+    </div>
+
+    <div class="panel-actions">
+      <a class="panel-btn" href="https://revolut.me/oceanosugar" target="_blank" rel="noopener">Забронировать</a>
+      <a class="panel-btn" href="/personalcontact.html">Назад</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AN.KI by Yana Makhzian</p>
+  </footer>
+
+</body>
+</html>
+5) silent.html
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Тихий контакт — AN.KI</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Тихий контакт — минимум слов, максимум точности." />
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/design.css" />
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#020616" />
+
+  <script src="/script.js" defer></script>
+</head>
+
+<body class="silent-page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-mini" href="/index.html" aria-label="AN.KI — Главная">
+        <img src="/anki-logo.png" alt="AN.KI" />
+        <span>AN.KI</span>
+      </a>
+
+      <button class="burger-btn" type="button" data-burger aria-label="Меню" aria-expanded="false">
+        <span class="burger-icon"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" data-nav-overlay></div>
+
+  <aside class="nav-drawer" data-nav-drawer aria-label="Навигация сайта">
+    <h3>Навигация</h3>
+    <nav class="drawer-nav"></nav>
+    <div class="drawer-bottom">Все права защищены.</div>
+  </aside>
+
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <main class="page fade-in">
+    <p class="back-row">
+      <a class="back-link" href="/personalcontact.html">← Назад</a>
+    </p>
+
+    <h1 class="title">Тихий контакт</h1>
+    <p class="subtitle">Минимум слов. Максимум точности.</p>
+
+    <div class="manifest">
+      <p><strong>Что это</strong><br>Работа без лишнего. Без объяснений “почему”. Без проговаривания очевидного.</p>
+
+      <p><strong>Формат</strong></p>
+      <ul>
+        <li>точечное взаимодействие</li>
+        <li>глубокая настройка</li>
+        <li>работа с ядром</li>
+      </ul>
+
+      <p><strong>Для кого</strong></p>
+      <ul>
+        <li>уже понимает, что происходит</li>
+        <li>не нуждается в объяснениях</li>
+        <li>хочет результат без лишнего процесса</li>
+      </ul>
+
+      <p class="manifest-line">16 000 €</p>
+    </div>
+
+    <div class="panel-actions">
+      <a class="panel-btn" href="https://revolut.me/oceanosugar" target="_blank" rel="noopener">Забронировать</a>
+      <a class="panel-btn" href="/personalcontact.html">Назад</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AN.KI by Yana Makhzian</p>
+  </footer>
+
+</body>
+</html>
+6) architecture.html
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Архитектура систем — AN.KI</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Архитектура систем — закрытый уровень проектирования." />
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/design.css" />
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#020616" />
+
+  <script src="/script.js" defer></script>
+</head>
+
+<body class="architecture-page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-mini" href="/index.html" aria-label="AN.KI — Главная">
+        <img src="/anki-logo.png" alt="AN.KI" />
+        <span>AN.KI</span>
+      </a>
+
+      <button class="burger-btn" type="button" data-burger aria-label="Меню" aria-expanded="false">
+        <span class="burger-icon"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" data-nav-overlay></div>
+
+  <aside class="nav-drawer" data-nav-drawer aria-label="Навигация сайта">
+    <h3>Навигация</h3>
+    <nav class="drawer-nav"></nav>
+    <div class="drawer-bottom">Все права защищены.</div>
+  </aside>
+
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <main class="page fade-in">
+    <p class="back-row">
+      <a class="back-link" href="/personalcontact.html">← Назад</a>
+    </p>
+
+    <h1 class="title">Архитектура систем</h1>
+    <p class="subtitle">Закрытый уровень работы.</p>
+
+    <div class="manifest">
+      <p><strong>Я работаю не с людьми. Я работаю со структурами.</strong></p>
+
+      <p><strong>Уровень</strong></p>
+      <ul>
+        <li>системы управления</li>
+        <li>социальные модели</li>
+        <li>архитектура власти</li>
+        <li>логика развития</li>
+      </ul>
+
+      <p><strong>Это не консультация.</strong><br>Это проектирование.</p>
+
+      <p><strong>Результат</strong></p>
+      <p>Создаются модели, которые могут быть реализованы:</p>
+      <ul>
+        <li>государствами</li>
+        <li>фондами</li>
+        <li>организациями</li>
+        <li>частными структурами</li>
+      </ul>
+
+      <p><strong>Важно</strong><br>Это закрытый уровень работы. Подробности не публикуются.</p>
+
+      <p class="manifest-line">от 40 000 €</p>
+    </div>
+
+    <div class="panel-actions">
+      <a class="panel-btn" href="/contacts.html">Запросить</a>
+      <a class="panel-btn" href="/personalcontact.html">Назад</a>
     </div>
   </main>
 
