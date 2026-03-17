@@ -5,24 +5,19 @@
   <title>Тихий контакт — AN.KI</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-        content="Тихий контакт — доступ к обращению. AN.KI." />
+  <meta name="description" content="Тихий контакт — минимум слов, максимум точности." />
 
-  <!-- СТИЛИ -->
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/design.css" />
 
-  <!-- PWA -->
   <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="theme-color" content="#020616" />
 
-  <!-- JS -->
   <script src="/script.js" defer></script>
 </head>
 
 <body class="silent-page">
 
-  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
       <a class="brand-mini" href="/index.html" aria-label="AN.KI — Главная">
@@ -30,11 +25,7 @@
         <span>AN.KI</span>
       </a>
 
-      <button class="burger-btn"
-              type="button"
-              data-burger
-              aria-label="Меню"
-              aria-expanded="false">
+      <button class="burger-btn" type="button" data-burger aria-label="Меню" aria-expanded="false">
         <span class="burger-icon"><span></span></span>
       </button>
     </div>
@@ -44,47 +35,37 @@
 
   <aside class="nav-drawer" data-nav-drawer aria-label="Навигация сайта">
     <h3>Навигация</h3>
-
-    <nav class="drawer-nav">
-      <a href="/index.html">Главная</a>
-      <a href="/anki.html">Об учении</a>
-      <a href="/mypath.html">Мой путь</a>
-      <a href="/personalcontact.html">Личный контакт</a>
-      <a href="/workbooks.html">Воркбуки</a>
-      <a href="/art.html">Арт</a>
-      <a href="/aroma.html">Ароматы</a>
-      <a href="/essays.html">Эссе</a>
-      <a href="/artifacts.html">Артефакты AN.KI</a>
-      <a href="/contacts.html">Контакты</a>
-    </nav>
-
-    <div class="drawer-bottom">
-      Все права защищены.
-    </div>
+    <nav class="drawer-nav"></nav>
+    <div class="drawer-bottom">Все права защищены.</div>
   </aside>
 
-  <!-- ФОН -->
   <canvas id="stars" aria-hidden="true"></canvas>
   <div class="nebula" aria-hidden="true"></div>
 
-  <!-- CONTENT -->
   <main class="page fade-in">
-
-    <p style="margin:0 0 18px;">
-      <a href="/personalcontact.html" style="text-decoration:none; opacity:.75; color:inherit;">← Назад</a>
+    <p class="back-row">
+      <a class="back-link" href="/personalcontact.html">← Назад</a>
     </p>
 
     <h1 class="title">Тихий контакт</h1>
-    <p class="subtitle">Доступ. Один раз.</p>
+    <p class="subtitle">Минимум слов. Максимум точности.</p>
 
     <div class="manifest">
-      <p>
-        Диалог философско-экзестенцианального направления на любую тему.
-      </p>
+      <p><strong>Что это</strong><br>Работа без лишнего. Без объяснений “почему”. Без проговаривания очевидного.</p>
 
-      <p>
-       Ответы на Ваши вопросы не предполагают Вашей удовлетворённости услышанным ответом.
-      </p>
+      <p><strong>Формат</strong></p>
+      <ul>
+        <li>точечное взаимодействие</li>
+        <li>глубокая настройка</li>
+        <li>работа с ядром</li>
+      </ul>
+
+      <p><strong>Для кого</strong></p>
+      <ul>
+        <li>уже понимает, что происходит</li>
+        <li>не нуждается в объяснениях</li>
+        <li>хочет результат без лишнего процесса</li>
+      </ul>
 
       <p class="manifest-line">16 000 €</p>
     </div>
@@ -93,7 +74,6 @@
       <a class="panel-btn" href="https://revolut.me/oceanosugar" target="_blank" rel="noopener">Забронировать</a>
       <a class="panel-btn" href="/personalcontact.html">Назад</a>
     </div>
-
   </main>
 
   <footer class="footer">
