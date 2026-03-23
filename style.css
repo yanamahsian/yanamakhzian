@@ -27,8 +27,10 @@
 
 /* base */
 *{ box-sizing: border-box; }
+
 html,body{
-  margin:0; padding:0;
+  margin:0;
+  padding:0;
   background: var(--bg);
   color: var(--text);
   font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
@@ -39,13 +41,19 @@ html,body{
 /* убираем любые “слои” если остались в HTML */
 #stars, .nebula{ display:none !important; }
 
-a{ color: var(--text); }
-a:hover{ color: var(--steel); }
+a{
+  color: var(--text);
+}
+
+a:hover{
+  color: var(--steel);
+}
 
 .page{
   max-width: var(--max);
   margin: 72px auto 56px;
   padding: var(--pad);
+  padding-top: 28px;
   background: transparent;
   position: relative;
 }
@@ -57,6 +65,7 @@ a:hover{ color: var(--steel); }
   font-weight: 650;
   letter-spacing: 0.02em;
 }
+
 .subtitle{
   margin: 0 0 28px;
   font-size: 15px;
@@ -65,18 +74,26 @@ a:hover{ color: var(--steel); }
   max-width: 72ch;
 }
 
+/* универсальные текстовые блоки */
 .manifest{
   margin-top: 10px;
   display: grid;
   gap: 12px;
   max-width: 78ch;
 }
+
 .manifest p{
   margin: 0;
   line-height: 1.75;
   font-size: 15px;
   color: var(--text);
 }
+
+.manifest strong{
+  color: #ddd0b0;
+  font-weight: 600;
+}
+
 .manifest-line{
   margin-top: 10px;
   color: var(--muted);
@@ -120,6 +137,7 @@ a:hover{ color: var(--steel); }
   font-weight: 650;
   letter-spacing: 0.02em;
 }
+
 .workbook-card p,
 .art-card p,
 .aroma-card p,
@@ -136,6 +154,7 @@ a:hover{ color: var(--steel); }
   text-decoration: none;
   border-bottom: 1px solid var(--line);
 }
+
 .essay-link-title:hover{
   color: var(--steel);
   border-bottom-color: var(--steel);
@@ -164,6 +183,7 @@ a:hover{ color: var(--steel); }
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
+
 .header-inner{
   max-width: 1200px;
   margin: 0 auto;
@@ -181,12 +201,15 @@ a:hover{ color: var(--steel); }
   gap:10px;
   text-decoration:none;
 }
+
 .brand-mini img{
-  width: 28px;
-  height:auto;
+  width: 28px !important;
+  height:auto !important;
   opacity: 0.9;
   filter:none;
+  margin: 0 !important;
 }
+
 .brand-mini span{
   font-size: 12px;
   letter-spacing: 0.34em;
@@ -205,6 +228,7 @@ a:hover{ color: var(--steel); }
   display:grid;
   place-items:center;
 }
+
 .burger-btn:hover{
   border-color: var(--steel);
 }
@@ -214,23 +238,36 @@ a:hover{ color: var(--steel); }
   height: 12px;
   position: relative;
 }
+
 .burger-icon::before,
 .burger-icon::after,
 .burger-icon span{
   content:"";
   position:absolute;
-  left:0; right:0;
+  left:0;
+  right:0;
   height: 2px;
   background: var(--text);
   opacity: 0.9;
 }
+
 .burger-icon::before{ top:0; }
 .burger-icon span{ top:5px; }
 .burger-icon::after{ top:10px; }
 
-.nav-open .burger-icon::before{ top:5px; transform: rotate(45deg); }
-.nav-open .burger-icon span{ opacity:0; }
-.nav-open .burger-icon::after{ top:5px; transform: rotate(-45deg); }
+.nav-open .burger-icon::before{
+  top:5px;
+  transform: rotate(45deg);
+}
+
+.nav-open .burger-icon span{
+  opacity:0;
+}
+
+.nav-open .burger-icon::after{
+  top:5px;
+  transform: rotate(-45deg);
+}
 
 /* overlay */
 .nav-overlay{
@@ -246,7 +283,8 @@ a:hover{ color: var(--steel); }
 /* drawer */
 .nav-drawer{
   position: fixed;
-  top:0; right:0;
+  top:0;
+  right:0;
   width: min(360px, 92vw);
   height: 100vh;
   background: var(--bg);
@@ -257,6 +295,7 @@ a:hover{ color: var(--steel); }
   padding: 18px;
   overflow: auto;
 }
+
 .nav-drawer h3{
   margin: 6px 0 14px;
   font-size: 12px;
@@ -269,6 +308,7 @@ a:hover{ color: var(--steel); }
   display:grid;
   gap: 10px;
 }
+
 .drawer-nav a{
   display:block;
   padding: 12px 12px;
@@ -278,10 +318,12 @@ a:hover{ color: var(--steel); }
   color: var(--text);
   background: transparent;
 }
+
 .drawer-nav a:hover{
   border-color: var(--steel);
   color: var(--steel);
 }
+
 .drawer-nav a.active{
   border-color: var(--steel);
   color: var(--steel);
@@ -297,12 +339,19 @@ a:hover{ color: var(--steel); }
 }
 
 /* open state */
-.nav-open .nav-overlay{ opacity:1; pointer-events:auto; }
-.nav-open .nav-drawer{ transform: translateX(0); }
+.nav-open .nav-overlay{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.nav-open .nav-drawer{
+  transform: translateX(0);
+}
 
 /* ==========================
    PWA install button (строгий)
    ========================== */
+
 .install-wrap{
   margin: 0 0 24px;
   display:flex;
@@ -310,6 +359,7 @@ a:hover{ color: var(--steel); }
   gap:12px;
   flex-wrap:wrap;
 }
+
 .install-btn{
   appearance:none;
   border: 1px solid var(--line);
@@ -321,10 +371,12 @@ a:hover{ color: var(--steel); }
   font-weight: 600;
   letter-spacing: 0.02em;
 }
+
 .install-btn:hover{
   border-color: var(--steel);
   color: var(--steel);
 }
+
 .install-hint{
   margin:0;
   color: var(--muted);
@@ -358,8 +410,8 @@ a:hover{ color: var(--steel); }
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 280px;
+  justify-content: flex-start;
+  min-height: 320px;
   padding: 26px 26px 24px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.015) 0%, rgba(255,255,255,0) 100%),
@@ -412,8 +464,18 @@ a:hover{ color: var(--steel); }
   z-index: 1;
 }
 
+.personalcontact-page .panel-sub + .panel-sub{
+  margin-top: 10px;
+}
+
+.personalcontact-page .panel-sub strong{
+  color: #ddd0b0;
+  font-weight: 600;
+}
+
 .personalcontact-page .panel-actions{
-  margin-top: 26px;
+  margin-top: auto;
+  padding-top: 24px;
   position: relative;
   z-index: 1;
 }
@@ -422,7 +484,7 @@ a:hover{ color: var(--steel); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 138px;
+  min-width: 168px;
   min-height: 42px;
   padding: 10px 18px;
   background: var(--bordo);
@@ -430,11 +492,12 @@ a:hover{ color: var(--steel); }
   border: 1px solid var(--gold);
   border-radius: 8px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   box-shadow: none;
+  white-space: nowrap;
 }
 
 .personalcontact-page .panel-btn:hover{
@@ -452,10 +515,35 @@ a:hover{ color: var(--steel); }
   margin-top: 28px;
 }
 
+/* изображения */
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-logo,
+.page-hero img,
+.anki-mark img,
+.logo-hero img,
+main img.logo,
+img[alt*="AN.KI"],
+img[alt*="ANKI"]{
+  width: min(360px, 70vw);
+  margin: 24px auto 18px;
+}
+
 /* responsive */
 @media (max-width: 900px){
-  .page{ padding: 28px 18px; margin-top: 52px; }
-  .title{ font-size: 28px; }
+  .page{
+    padding: 28px 18px;
+    padding-top: 28px;
+    margin-top: 52px;
+  }
+
+  .title{
+    font-size: 28px;
+  }
 
   .personalcontact-page .panel-grid{
     grid-template-columns: 1fr;
@@ -470,39 +558,9 @@ a:hover{ color: var(--steel); }
     grid-column: auto;
     max-width: none;
   }
-}
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  .personalcontact-page .panel-btn{
+    width: 100%;
+    min-width: 0;
+  }
 }
-.anki-logo,
-.brand-mini img {
-  width: 34px;
-  height: auto;
-}
-/* ===== FIX: огромные картинки и логотип на страницах ===== */
-img { max-width: 100%; height: auto; display: block; }
-
-/* Если на странице есть большой логотип сверху — ограничим его */
-.hero-logo,
-.page-hero img,
-.anki-mark img,
-.logo-hero img,
-main img.logo,
-img[alt*="AN.KI"],
-img[alt*="ANKI"] {
-  width: min(360px, 70vw);
-  margin: 24px auto 18px;
-}
-
-/* В “шапке” (brand-mini) логотип должен быть маленьким */
-.brand-mini img {
-  width: 28px !important;
-  height: auto !important;
-  margin: 0 !important;
-}
-
-/* Контент не должен прилипать к низу после огромной картинки */
-.page { padding-top: 28px; }
