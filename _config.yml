@@ -1,1 +1,25 @@
+title: "AN.KI"
+description: "Журнал AN.KI. Наблюдения, разборы, тезисы и эссе."
+lang: ru
+timezone: Europe/Berlin
 
+markdown: kramdown
+permalink: /journal/:year/:month/:day/:title.html
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+collections_dir: .
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - README.md
+  - node_modules
+  - vendor
