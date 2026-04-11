@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME
+  branch: main
+
+media_folder: "media"
+public_folder: "/media"
+
+publish_mode: simple
+
+collections:
+  - name: "journal"
+    label: "Журнал"
+    folder: "_journal"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}}"
+    sortable_fields: ["title"]
+    fields:
+      - { label: "Название", name: "title", widget: "string" }
+      - { label: "Тип", name: "type", widget: "select", options: ["essay", "article", "short"], default: "short" }
+      - { label: "Короткое описание", name: "subtitle", widget: "string", required: false }
+      - { label: "Текст", name: "body", widget: "markdown" }
