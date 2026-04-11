@@ -9,28 +9,27 @@
 (() => {
   // === 0) ЕДИНОЕ МЕНЮ (правда одна) ===
   // Меняешь пункты ТОЛЬКО здесь.
- const NAV_ITEMS = [
-  { href: "index.html",           label: "Главная" },
-  { href: "anki.html",            label: "Об учении" },
-  { href: "mypath.html",          label: "Мой путь" },
+  const NAV_ITEMS = [
+    { href: "/index.html", label: "Главная" },
+    { href: "/anki.html", label: "Об учении" },
+    { href: "/mypath.html", label: "Мой путь" },
 
-  { href: "personalcontact.html", label: "Личный контакт" },
-  { href: "architecture-systems.html", label: "Архитектура систем" },
-  { href: "field-support.html",   label: "Поддержка поля" },
+    { href: "/personalcontact.html", label: "Личный контакт" },
+    { href: "/architecture-systems.html", label: "Архитектура систем" },
+    { href: "/field-support.html", label: "Поддержка поля" },
 
-  { href: "workbooks.html",       label: "Воркбуки" },
-  { href: "art.html",             label: "Арт" },
-  { href: "aroma.html",           label: "Ароматы" },
-  { href: "journal.html",          label: "Журнал" },
-  { href: "artifacts.html",       label: "Артефакты AN.KI" },
+    { href: "/workbooks.html", label: "Воркбуки" },
+    { href: "/art.html", label: "Арт" },
+    { href: "/aroma.html", label: "Ароматы" },
+    { href: "/journal.html", label: "Журнал" },
+    { href: "/artifacts.html", label: "Артефакты AN.KI" },
 
-  { href: "contacts.html",        label: "Контакты" }
-];
-
+    { href: "/contacts.html", label: "Контакты" }
+  ];
 
   const SW_VERSION = "2026-02-17-1"; // меняй только если хочешь форс-апдейт SW
 
-  const $  = (s, root = document) => root.querySelector(s);
+  const $ = (s, root = document) => root.querySelector(s);
   const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
 
   function normalizePath(p) {
@@ -38,27 +37,26 @@
     if (clean.endsWith("/")) return clean + "index.html";
     return clean;
   }
+
   function currentPathnameFile() {
     const p = normalizePath(location.pathname);
     const file = p.substring(p.lastIndexOf("/") + 1) || "index.html";
     return file;
   }
 
-  // === 1) SELF-HEAL: убираем дубли UI-узлов (самая частая причина твоего “всё сломалось”) ===
+  // === 1) SELF-HEAL: убираем дубли UI-узлов ===
   function keepFirstRemoveRest(selector) {
     const nodes = $$(selector);
     if (nodes.length <= 1) return nodes[0] || null;
-    nodes.slice(1).forEach(n => n.remove());
+    nodes.slice(1).forEach((n) => n.remove());
     return nodes[0];
   }
 
   function ensureNavScaffold() {
-    // Оставляем по одному экземпляру ключевых узлов.
     const btn = keepFirstRemoveRest("[data-burger]");
 
-    // overlay / drawer могут отсутствовать на некоторых страницах — создадим.
     let overlay = keepFirstRemoveRest("[data-nav-overlay]");
-    let drawer  = keepFirstRemoveRest("[data-nav-drawer]");
+    let drawer = keepFirstRemoveRest("[data-nav-drawer]");
 
     if (!overlay) {
       overlay = document.createElement("div");
@@ -79,7 +77,6 @@
       document.body.appendChild(drawer);
     }
 
-    // Внутри drawer обязательно должен быть .drawer-nav — если нет, добавим.
     let nav = $(".drawer-nav", drawer);
     if (!nav) {
       nav = document.createElement("nav");
@@ -87,28 +84,27 @@
       drawer.insertBefore(nav, $(".drawer-bottom", drawer) || null);
     }
 
-    // Иногда встречаются дубли drawer-nav внутри drawer — оставим один.
     const navs = $$(".drawer-nav", drawer);
-    if (navs.length > 1) navs.slice(1).forEach(n => n.remove());
+    if (navs.length > 1) navs.slice(1).forEach((n) => n.remove());
 
     return { btn, overlay, drawer, nav: $(".drawer-nav", drawer) };
   }
 
-  // === 2) Строим меню в drawer (одна логика на всех страницах) ===
+  // === 2) Строим меню в drawer ===
   function buildDrawerNav(navEl) {
     if (!navEl) return;
 
     const activeFile = currentPathnameFile();
 
     navEl.innerHTML = NAV_ITEMS.map((it) => {
-      const href = it.href; // абсолютные пути стабильнее на домене
+      const href = it.href;
       const file = href.substring(href.lastIndexOf("/") + 1);
       const isActive = file === activeFile;
       return `<a href="${href}" ${isActive ? 'aria-current="page"' : ""}>${it.label}</a>`;
     }).join("");
   }
 
-  // === 3) Бургер: без “сюрпризов” ===
+  // === 3) Бургер ===
   function initBurger(btn, overlay, drawer) {
     if (!btn || !overlay || !drawer) return;
 
@@ -118,10 +114,12 @@
       root.classList.add("nav-open");
       btn.setAttribute("aria-expanded", "true");
     }
+
     function close() {
       root.classList.remove("nav-open");
       btn.setAttribute("aria-expanded", "false");
     }
+
     function toggle() {
       root.classList.contains("nav-open") ? close() : open();
     }
@@ -139,27 +137,26 @@
     });
   }
 
-  // === 4) PWA install button (если элементы есть) ===
+  // === 4) PWA install button ===
   function isIOS() {
     return /iphone|ipad|ipod/i.test(navigator.userAgent);
   }
+
   function isStandalone() {
     return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
   }
 
   function initInstallUI() {
-    const btn  = document.getElementById("installBtn");
+    const btn = document.getElementById("installBtn");
     const hint = document.getElementById("installHint");
     if (!btn) return;
 
-    // Если уже установлено — ничего не показываем.
     if (isStandalone()) {
       btn.style.display = "none";
       if (hint) hint.style.display = "none";
       return;
     }
 
-    // iOS: показываем подсказку вместо системного окна.
     if (isIOS()) {
       btn.style.display = "inline-flex";
       btn.addEventListener("click", () => {
@@ -177,7 +174,7 @@
       deferredPrompt = e;
       btn.style.display = "inline-flex";
       if (hint) {
-        hint.style.display = "none"; // без лишних слов
+        hint.style.display = "none";
       }
     });
 
@@ -191,31 +188,27 @@
     });
   }
 
-  // === 5) Service Worker: стабильно обновляемся (без “залипания” и без циклов) ===
+  // === 5) Service Worker ===
   async function initSW() {
     if (!("serviceWorker" in navigator)) return;
 
     try {
       const reg = await navigator.serviceWorker.register(`/service-worker.js?v=${SW_VERSION}`, { scope: "/" });
 
-      // Если новый SW уже waiting — активируем
       if (reg.waiting) {
         reg.waiting.postMessage({ type: "SKIP_WAITING" });
       }
 
-      // Отлавливаем updatefound → waiting → SKIP_WAITING
       reg.addEventListener("updatefound", () => {
         const sw = reg.installing;
         if (!sw) return;
         sw.addEventListener("statechange", () => {
           if (sw.state === "installed" && navigator.serviceWorker.controller) {
-            // есть новый SW
             if (reg.waiting) reg.waiting.postMessage({ type: "SKIP_WAITING" });
           }
         });
       });
 
-      // Перезагрузка один раз при смене контроллера
       let refreshed = false;
       navigator.serviceWorker.addEventListener("controllerchange", () => {
         if (refreshed) return;
@@ -223,7 +216,6 @@
         location.reload();
       });
     } catch (e) {
-      // Не ломаем сайт, если SW не зарегистрировался
       console.warn("SW registration failed:", e);
     }
   }
