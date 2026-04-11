@@ -1,24 +1,46 @@
 title: "AN.KI"
-description: "Журнал AN.KI. Наблюдения, разборы, тезисы и эссе."
+description: "Журнал AN.KI. Эссе, статьи и короткие записи."
 lang: ru
 timezone: Europe/Berlin
 future: true
 
 markdown: kramdown
-permalink: /journal/:year/:month/:day/:title.html
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-collections_dir: .
+collections:
+  essays:
+    output: true
+    permalink: /journal/essays/:title.html
+  articles:
+    output: true
+    permalink: /journal/articles/:title.html
+  notes:
+    output: true
+    permalink: /journal/notes/:title.html
 
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: "essays"
     values:
       layout: "post"
+      type: "Эссе"
+
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "post"
+      type: "Статья"
+
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "post"
+      type: "Короткое"
 
 exclude:
   - README.md
