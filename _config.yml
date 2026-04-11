@@ -2,6 +2,7 @@ title: "AN.KI"
 description: "Журнал AN.KI. Наблюдения, разборы, тезисы и эссе."
 lang: ru
 timezone: Europe/Berlin
+future: true
 
 markdown: kramdown
 permalink: /journal/:year/:month/:day/:title.html
