@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Журнал — AN.KI</title>
-  <meta name="description" content="Журнал AN.KI. Эссе, статьи, короткие записи." />
+  <meta name="description" content="Журнал AN.KI. Эссе, статьи и короткие записи." />
 
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/design.css" />
@@ -334,48 +334,34 @@
       </nav>
 
       <section class="journal-list" aria-label="Список материалов">
-        <a class="journal-entry" href="/essay-1.html" data-type="essay">
-          <div class="journal-entry-meta">
-            <span class="journal-entry-type">Эссе</span>
-          </div>
-          <h2 class="journal-entry-title">Название первого большого текста</h2>
-          <p class="journal-entry-subtitle">
-            Здесь будет короткая строка, которая даёт человеку понять, о чём этот материал и зачем в него заходить.
-          </p>
-        </a>
+        {% assign has_posts = false %}
+        {% for post in site.posts %}
+          {% assign has_posts = true %}
+          <a class="journal-entry" href="{{ post.url }}" data-type="{{ post.type | downcase }}">
+            <div class="journal-entry-meta">
+              <span class="journal-entry-type">
+                {% case post.type %}
+                  {% when "Эссе" %}Эссе
+                  {% when "Статья" %}Статья
+                  {% when "Короткое" %}Короткая запись
+                  {% when "essay" %}Эссе
+                  {% when "article" %}Статья
+                  {% when "short" %}Короткая запись
+                  {% else %}Материал
+                {% endcase %}
+              </span>
+            </div>
 
-        <a class="journal-entry" href="/article-1.html" data-type="article">
-          <div class="journal-entry-meta">
-            <span class="journal-entry-type">Статья</span>
-          </div>
-          <h2 class="journal-entry-title">Название статьи или аналитического разбора</h2>
-          <p class="journal-entry-subtitle">
-            Этот формат подойдёт для более ясных и прямых текстов без ощущения личного блога.
-          </p>
-        </a>
+            <h2 class="journal-entry-title">{{ post.title }}</h2>
 
-        <a class="journal-entry" href="/short-1.html" data-type="short">
-          <div class="journal-entry-meta">
-            <span class="journal-entry-type">Короткая запись</span>
-          </div>
-          <h2 class="journal-entry-title">Короткий текст тоже выглядит как полноценный объект</h2>
-          <p class="journal-entry-subtitle">
-            Не заметка из соцсети, а самостоятельная единица, которой можно поделиться и которую можно сохранить.
-          </p>
-        </a>
+            {% if post.subtitle %}
+              <p class="journal-entry-subtitle">{{ post.subtitle }}</p>
+            {% endif %}
+          </a>
+        {% endfor %}
 
-        <a class="journal-entry" href="/essay-2.html" data-type="essay">
-          <div class="journal-entry-meta">
-            <span class="journal-entry-type">Эссе</span>
-          </div>
-          <h2 class="journal-entry-title">Второй большой текст для структуры раздела</h2>
-          <p class="journal-entry-subtitle">
-            Позже здесь будут уже твои реальные материалы. Сейчас это каркас, чтобы ты увидела саму систему.
-          </p>
-        </a>
-
-        <div class="journal-empty" id="journalEmpty">
-          В этом разделе пока нет материалов.
+        <div class="journal-empty" id="journalEmpty"{% if has_posts == false %} style="display:block;"{% endif %}>
+          В журнале пока нет материалов.
         </div>
       </section>
 
@@ -403,7 +389,7 @@
         let visibleCount = 0;
 
         entries.forEach((entry) => {
-          const type = entry.getAttribute('data-type');
+          const type = (entry.getAttribute('data-type') || '').toLowerCase();
           const show = filter === 'all' || type === filter;
           entry.style.display = show ? 'block' : 'none';
           if (show) visibleCount += 1;
