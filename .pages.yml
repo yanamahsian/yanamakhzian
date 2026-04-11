@@ -40,10 +40,11 @@ content:
 
       - name: layout
         label: Layout
-        type: hidden
+        type: text
+        hidden: true
         value: post
 
       - name: body
         label: Текст
-        type: rich-text
+        type: text
         required: true
