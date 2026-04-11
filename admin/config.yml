@@ -2,6 +2,7 @@ backend:
   name: github
   repo: yanamahsian/yanamakhzian
   branch: main
+  auth_scope: repo
 
 media_folder: "media"
 public_folder: "/media"
