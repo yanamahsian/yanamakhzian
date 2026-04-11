@@ -1,142 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <title>Эссе — Mindspace</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" /
-    <link rel="manifest" href="manifest.webmanifest" />
-    <meta name="theme-color" content="#020616" />
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="design.css">
-    
+  <meta charset="utf-8" />
+  <title>Эссе — AN.KI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Архив эссе AN.KI. Основной поток текстов теперь находится в журнале." />
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/design.css" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#020616" />
+
+  <script src="/script.js" defer></script>
+
+  <style>
+    .essays-page .page {
+      max-width: 980px;
+    }
+
+    .essays-page .essay-shift {
+      margin: 26px 0 34px;
+      padding: 22px 24px;
+      border: 1px solid rgba(169, 138, 82, 0.22);
+      border-radius: 10px;
+      background:
+        linear-gradient(180deg, rgba(75,24,32,0.10) 0%, rgba(23,26,29,0.96) 24%, rgba(23,26,29,1) 100%);
+    }
+
+    .essays-page .essay-shift h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .essays-page .essay-shift p {
+      margin: 0;
+      max-width: 62ch;
+      line-height: 1.75;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .essays-page .essay-actions {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .essays-page .essay-actions .panel-btn {
+      min-width: 160px;
+    }
+
+    .essays-page .archive-label {
+      margin: 34px 0 14px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .essays-page .panel-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .essays-page .panel-link:hover h2 {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 900px) {
+      .essays-page .essay-shift {
+        padding: 18px;
+      }
+
+      .essays-page .essay-shift h2 {
+        font-size: 20px;
+      }
+
+      .essays-page .essay-actions {
+        flex-direction: column;
+      }
+
+      .essays-page .essay-actions .panel-btn {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="essays-page">
 
-<!-- BURGER HEADER -->
-<header class="site-header">
-  <div class="header-inner">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-mini" href="/index.html" aria-label="AN.KI — Главная">
+        <img src="/anki-logo.png" alt="AN.KI" />
+        <span>AN.KI</span>
+      </a>
 
-    <a class="brand-mini" href="index.html">
-      <img src="anki-logo.png" alt="AN.KI">
-      <span>AN.KI</span>
-    </a>
+      <button class="burger-btn"
+              type="button"
+              data-burger
+              aria-label="Открыть меню"
+              aria-expanded="false">
+        <span class="burger-icon"><span></span></span>
+      </button>
+    </div>
+  </header>
 
-    <button class="burger-btn" type="button"
-            data-burger
-            aria-label="Открыть меню"
-            aria-expanded="false">
-      <div class="burger-icon"><span></span></div>
-    </button>
+  <div class="nav-overlay" data-nav-overlay></div>
 
-  </div>
-</header>
+  <aside class="nav-drawer" data-nav-drawer aria-label="Навигация сайта">
+    <h3>Навигация</h3>
+    <nav class="drawer-nav"></nav>
+    <div class="drawer-bottom">Все права защищены.</div>
+  </aside>
 
-<div class="nav-overlay" data-nav-overlay></div>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
 
-<aside class="nav-drawer" data-nav-drawer>
-  <h3>Навигация</h3>
-
-  <nav class="drawer-nav">
-    <a href="index.html">Главная</a>
-    <a href="anki.html">Об учении</a>
-    <a href="mypath.html">Мой путь</a>
-    <a href="personalcontact.html">Личный контакт</a>
-    <a href="workbooks.html">Воркбуки</a>
-    <a href="art.html">Арт</a>
-    <a href="aroma.html">Ароматы</a>
-    <a href="essays.html">Эссе</a>
-    <a href="artifacts.html">Артефакты AN.KI</a>
-    <a href="contacts.html">Контакты</a>
-  </nav>
-
-  <div class="drawer-bottom">
-    Все права защищены.
-  </div>
-</aside>
-
-<canvas id="stars"></canvas>
-<div class="nebula"></div>
-
-<div class="page fade-in">
-
+  <main class="page fade-in" role="main">
     <h1 class="title">Эссе</h1>
-    <p class="subtitle">Пространство для текстов, которые рождаются из глубинного зрения.</p>
+    <p class="subtitle">
+      Архив больших текстов. Основной поток новых публикаций теперь находится в журнале.
+    </p>
 
-    <!-- Блок о разделе эссе -->
-    <div class="essay-info">
-        <p>
-            Здесь собираются тексты, которые приходят не умом, а состоянием.  
-            Они не следуют нормам большинства и не подстраиваются под социальные ожидания.  
-            Каждое эссе — это взгляд с иной высоты.
-            Эти тексты не предназначены для согласия, следования или применения.
-            Они — лишь фиксация взгляда, а не руководство к действию.
-        </p>
+    <div class="essay-shift">
+      <h2>Журнал стал основным пространством текстов</h2>
+      <p>
+        Эссе больше не существуют отдельно от остальных материалов. Теперь большие тексты, статьи и короткие записи
+        собраны внутри одного слоя — журнала. Старые эссе сохранены ниже как архив.
+      </p>
+
+      <div class="essay-actions">
+        <a class="panel-btn" href="/journal.html">Открыть журнал</a>
+        <a class="panel-btn" href="/index.html">На главную</a>
+      </div>
     </div>
 
-    <!-- НОВЫЕ СВЕТОДИОДНЫЕ ПАНЕЛИ ДЛЯ ЭССЕ -->
+    <div class="essay-info">
+      <p>
+        Здесь остаются тексты, написанные раньше. Они не подстраиваются под социальные ожидания и не рассчитаны
+        на согласие. Каждый из них — самостоятельная фиксация взгляда, а не руководство к действию.
+      </p>
+    </div>
+
+    <div class="archive-label">Архив</div>
+
     <div class="panel-grid">
 
-        <!-- Эссе 1 -->
-        <a href="essay1.html" class="panel panel-link">
-            <h2>Они едят дерьмо, потому что им это нравится</h2>
-            <p class="panel-sub">
-                О людях, которые предпочитают жить на дне и делают это нормой.
-            </p>
-        </a>
+      <a href="/essay1.html" class="panel panel-link">
+        <h2>Они едят дерьмо, потому что им это нравится</h2>
+        <p class="panel-sub">
+          О людях, которые предпочитают жить на дне и делают это нормой.
+        </p>
+      </a>
 
-        <!-- Эссе 2 -->
-        <a href="essay2.html" class="panel panel-link">
-            <h2>Театр пустых красочных теней.</h2>
-            <p class="panel-sub">
-                О пустых стандартах большинства, продажных «звёздах» и имитации искусства.
-            </p>
-        </a>
+      <a href="/essay2.html" class="panel panel-link">
+        <h2>Театр пустых красочных теней</h2>
+        <p class="panel-sub">
+          О пустых стандартах большинства, продажных «звёздах» и имитации искусства.
+        </p>
+      </a>
 
-        <!-- Эссе 3 -->
-        <a href="essay3.html" class="panel panel-link">
-    <h2>Величие букашек. Иллюзия эволюции человека.</h2>
-    <p class="panel-sub">
-        Иллюзия эволюции человека и устройство человеческой фермы.
-    </p>
-</a>
+      <a href="/essay3.html" class="panel panel-link">
+        <h2>Величие букашек. Иллюзия эволюции человека.</h2>
+        <p class="panel-sub">
+          Иллюзия эволюции человека и устройство человеческой фермы.
+        </p>
+      </a>
 
-          <!-- Эссе 4 -->
-        <a href="essay4.html" class="panel panel-link">
-    <h2>Преувеличивший человек</h2>
-    <p class="panel-sub">
-       Правда, в которой ты врёшь
-    </p>
-</a>
+      <a href="/essay4.html" class="panel panel-link">
+        <h2>Преувеличивший человек</h2>
+        <p class="panel-sub">
+          Правда, в которой ты врёшь.
+        </p>
+      </a>
 
-        <!-- Эссе 5 -->
-        <a href="essay5.html" class="panel panel-link">
-    <h2>Еда для бактерий и червей</h2>
-    <p class="panel-sub">
-        О ценности жизни, человеческом паразитизме и иллюзии смысла.
-    </p>
-</a>
+      <a href="/essay5.html" class="panel panel-link">
+        <h2>Еда для бактерий и червей</h2>
+        <p class="panel-sub">
+          О ценности жизни, человеческом паразитизме и иллюзии смысла.
+        </p>
+      </a>
 
-           <!-- Эссе 6 -->
-        <a href="essay6.html" class="panel panel-link">
-            <h2>Мужчины из фарса, женщины из ванили</h2>
-            <p class="panel-sub">
-        </a>
+      <a href="/essay6.html" class="panel panel-link">
+        <h2>Мужчины из фарса, женщины из ванили</h2>
+        <p class="panel-sub">
+          Текст из прежнего архива эссе.
+        </p>
+      </a>
 
     </div>
 
-    <!-- Кнопка / ссылка назад -->
-    <a href="index.html" class="back-link" style="display:inline-block; margin-top: 30px;">
-        ← На главную
-    </a>
+    <div class="panel-actions" style="margin-top: 30px;">
+      <a class="panel-btn" href="/journal.html">Перейти в журнал</a>
+    </div>
+  </main>
 
-</div>
-
-<footer class="footer">
-    <p>© 2025 Mindspace. Для тех, кому тесно в человеческой игре.</p>
-</footer>
+  <footer class="footer">
+    <p>© 2025 AN.KI by Yana Makhzian</p>
+  </footer>
 
 </body>
 </html>
