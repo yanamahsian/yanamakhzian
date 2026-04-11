@@ -4,15 +4,289 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Журнал — AN.KI</title>
-  <meta name="description" content="Журнал AN.KI. Наблюдения, разборы, тезисы и эссе." />
+  <meta name="description" content="Журнал AN.KI. Эссе, статьи, короткие записи." />
 
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/design.css" />
 
   <link rel="manifest" href="/manifest.webmanifest" />
-  <meta name="theme-color" content="#020616" />
+  <meta name="theme-color" content="#f5f5f3" />
 
   <script src="/script.js" defer></script>
+
+  <style>
+    body.journal-page{
+      background:#f5f5f3;
+      color:#1a1a1a;
+    }
+
+    .journal-page #stars,
+    .journal-page .nebula{
+      display:none !important;
+    }
+
+    .journal-page .site-header{
+      background:rgba(245,245,243,0.96);
+      border-bottom:1px solid rgba(26,26,26,0.10);
+      backdrop-filter:blur(8px);
+    }
+
+    .journal-page .brand-mini span{
+      color:#4f4f4f;
+    }
+
+    .journal-page .burger-btn{
+      border:1px solid rgba(26,26,26,0.14);
+      background:transparent;
+    }
+
+    .journal-page .burger-btn:hover{
+      border-color:rgba(26,26,26,0.34);
+    }
+
+    .journal-page .burger-icon::before,
+    .journal-page .burger-icon::after,
+    .journal-page .burger-icon span{
+      background:#1a1a1a;
+    }
+
+    .journal-page .nav-overlay{
+      background:rgba(0,0,0,0.34);
+    }
+
+    .journal-page .nav-drawer{
+      background:#f5f5f3;
+      border-left:1px solid rgba(26,26,26,0.10);
+    }
+
+    .journal-page .nav-drawer h3,
+    .journal-page .drawer-bottom{
+      color:#5c5c5c;
+    }
+
+    .journal-page .drawer-nav a{
+      color:#1a1a1a;
+      border:1px solid rgba(26,26,26,0.10);
+      background:transparent;
+    }
+
+    .journal-page .drawer-nav a:hover,
+    .journal-page .drawer-nav a.active{
+      color:#1a1a1a;
+      border-color:rgba(26,26,26,0.28);
+    }
+
+    .journal-page .page{
+      max-width:1100px;
+      margin:78px auto 56px;
+      padding:0 28px 40px;
+      background:transparent;
+    }
+
+    .journal-shell{
+      display:grid;
+      grid-template-columns:minmax(0, 1fr);
+      gap:0;
+    }
+
+    .journal-header{
+      padding:36px 0 22px;
+      border-bottom:1px solid rgba(26,26,26,0.10);
+    }
+
+    .journal-kicker{
+      margin:0 0 10px;
+      font-size:11px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:#6a6a6a;
+    }
+
+    .journal-title{
+      margin:0;
+      font-size:56px;
+      line-height:1.04;
+      font-weight:500;
+      letter-spacing:-0.02em;
+      color:#111111;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .journal-intro{
+      margin:16px 0 0;
+      max-width:640px;
+      font-size:16px;
+      line-height:1.8;
+      color:#4e4e4e;
+    }
+
+    .journal-topnav{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:18px 0 24px;
+      border-bottom:1px solid rgba(26,26,26,0.10);
+    }
+
+    .journal-topnav button{
+      appearance:none;
+      border:none;
+      background:none;
+      padding:0;
+      margin:0;
+      color:#666666;
+      font-size:14px;
+      line-height:1;
+      letter-spacing:0.02em;
+      cursor:pointer;
+      transition:opacity .2s ease;
+    }
+
+    .journal-topnav button:hover{
+      color:#111111;
+    }
+
+    .journal-topnav button.is-active{
+      color:#111111;
+      font-weight:600;
+    }
+
+    .journal-list{
+      padding:8px 0 0;
+    }
+
+    .journal-entry{
+      display:block;
+      padding:26px 0 30px;
+      border-bottom:1px solid rgba(26,26,26,0.10);
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .journal-entry:hover .journal-entry-title{
+      opacity:0.78;
+    }
+
+    .journal-entry-meta{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:10px;
+      font-size:11px;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:#747474;
+    }
+
+    .journal-entry-type{
+      display:inline-block;
+    }
+
+    .journal-entry-title{
+      margin:0;
+      max-width:780px;
+      font-size:30px;
+      line-height:1.18;
+      font-weight:500;
+      letter-spacing:-0.01em;
+      color:#111111;
+      font-family: Georgia, "Times New Roman", serif;
+      transition:opacity .2s ease;
+    }
+
+    .journal-entry-subtitle{
+      margin:12px 0 0;
+      max-width:700px;
+      font-size:16px;
+      line-height:1.85;
+      color:#4b4b4b;
+    }
+
+    .journal-empty{
+      display:none;
+      padding:34px 0 12px;
+      color:#666666;
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    .journal-footer-note{
+      padding-top:26px;
+      font-size:12px;
+      line-height:1.7;
+      color:#777777;
+    }
+
+    .journal-page .panel-actions{
+      margin-top:28px;
+    }
+
+    .journal-page .panel-btn{
+      background:#ffffff;
+      color:#111111;
+      border:1px solid rgba(26,26,26,0.16);
+      border-radius:0;
+      min-width:148px;
+      min-height:42px;
+      padding:10px 18px;
+      font-size:12px;
+      letter-spacing:0.10em;
+      text-transform:uppercase;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .journal-page .panel-btn:hover{
+      background:#f0f0ed;
+      color:#111111;
+      border-color:rgba(26,26,26,0.32);
+    }
+
+    .journal-page .footer{
+      max-width:1100px;
+      margin:14px auto 40px;
+      padding:0 28px;
+      color:#777777;
+      border-top:1px solid rgba(26,26,26,0.10);
+      padding-top:16px;
+    }
+
+    @media (max-width: 900px){
+      .journal-page .page{
+        margin-top:58px;
+        padding:0 18px 32px;
+      }
+
+      .journal-title{
+        font-size:42px;
+      }
+
+      .journal-intro{
+        font-size:15px;
+      }
+
+      .journal-entry{
+        padding:22px 0 26px;
+      }
+
+      .journal-entry-title{
+        font-size:24px;
+      }
+
+      .journal-entry-subtitle{
+        font-size:15px;
+        line-height:1.75;
+      }
+
+      .journal-page .footer{
+        padding:0 18px;
+        padding-top:16px;
+      }
+    }
+  </style>
 </head>
 
 <body class="journal-page">
@@ -42,105 +316,117 @@
     <div class="drawer-bottom">Все права защищены.</div>
   </aside>
 
-  <canvas id="stars" aria-hidden="true"></canvas>
-  <div class="nebula" aria-hidden="true"></div>
-
   <main class="page fade-in" role="main">
-    <header class="journal-hero">
-      <p class="journal-kicker">AN.KI</p>
-      <h1 class="journal-title">Журнал</h1>
-      <p class="journal-intro">
-        Не поток. Не лента. Не реакция ради реакции.
-        Здесь появляются записи, когда мысль дозревает до формы.
-      </p>
-    </header>
+    <div class="journal-shell">
+      <header class="journal-header">
+        <p class="journal-kicker">Издание</p>
+        <h1 class="journal-title">Журнал</h1>
+        <p class="journal-intro">
+          Эссе, статьи и короткие записи. Не поток ради потока, а тексты, которые появляются тогда, когда им есть зачем появиться.
+        </p>
+      </header>
 
-    <section class="journal-note" aria-label="О журнале">
-      <p>
-        Это пространство для наблюдений, разборов, тезисов и редких эссе.
-        Не для регулярного контента, а для точной фиксации того, что стоит назвать своим именем.
-      </p>
-    </section>
+      <nav class="journal-topnav" aria-label="Разделы журнала">
+        <button class="is-active" type="button" data-filter="all">Все</button>
+        <button type="button" data-filter="essay">Эссе</button>
+        <button type="button" data-filter="article">Статьи</button>
+        <button type="button" data-filter="short">Короткие</button>
+      </nav>
 
-    <section class="journal-section" aria-label="Избранное">
-      <div class="journal-section-head">
-        <h2>Избранное</h2>
-      </div>
-
-      <article class="journal-entry featured-entry">
-        <a class="journal-entry-link" href="/essays.html">
+      <section class="journal-list" aria-label="Список материалов">
+        <a class="journal-entry" href="/essay-1.html" data-type="essay">
           <div class="journal-entry-meta">
             <span class="journal-entry-type">Эссе</span>
-            <time class="journal-entry-date" datetime="2026-04-01">1 апреля 2026</time>
           </div>
-          <h3 class="journal-entry-title">Пока здесь будет первое опорное эссе</h3>
+          <h2 class="journal-entry-title">Название первого большого текста</h2>
           <p class="journal-entry-subtitle">
-            Этот блок можно будет позже заменить на первую ключевую запись или убрать совсем.
+            Здесь будет короткая строка, которая даёт человеку понять, о чём этот материал и зачем в него заходить.
           </p>
         </a>
-      </article>
-    </section>
 
-    <section class="journal-section" aria-label="Архив записей">
-      <div class="journal-section-head">
-        <h2>Архив</h2>
+        <a class="journal-entry" href="/article-1.html" data-type="article">
+          <div class="journal-entry-meta">
+            <span class="journal-entry-type">Статья</span>
+          </div>
+          <h2 class="journal-entry-title">Название статьи или аналитического разбора</h2>
+          <p class="journal-entry-subtitle">
+            Этот формат подойдёт для более ясных и прямых текстов без ощущения личного блога.
+          </p>
+        </a>
+
+        <a class="journal-entry" href="/short-1.html" data-type="short">
+          <div class="journal-entry-meta">
+            <span class="journal-entry-type">Короткая запись</span>
+          </div>
+          <h2 class="journal-entry-title">Короткий текст тоже выглядит как полноценный объект</h2>
+          <p class="journal-entry-subtitle">
+            Не заметка из соцсети, а самостоятельная единица, которой можно поделиться и которую можно сохранить.
+          </p>
+        </a>
+
+        <a class="journal-entry" href="/essay-2.html" data-type="essay">
+          <div class="journal-entry-meta">
+            <span class="journal-entry-type">Эссе</span>
+          </div>
+          <h2 class="journal-entry-title">Второй большой текст для структуры раздела</h2>
+          <p class="journal-entry-subtitle">
+            Позже здесь будут уже твои реальные материалы. Сейчас это каркас, чтобы ты увидела саму систему.
+          </p>
+        </a>
+
+        <div class="journal-empty" id="journalEmpty">
+          В этом разделе пока нет материалов.
+        </div>
+      </section>
+
+      <div class="journal-footer-note">
+        anki.systems
       </div>
 
-      <article class="journal-entry">
-        <a class="journal-entry-link" href="#">
-          <div class="journal-entry-meta">
-            <span class="journal-entry-type">Журнал</span>
-            <time class="journal-entry-date" datetime="2026-04-01">1 апреля 2026</time>
-          </div>
-          <h3 class="journal-entry-title">Первая запись журнала</h3>
-          <p class="journal-entry-subtitle">
-            Здесь будет подзаголовок записи — одна строка, которая задаёт тон.
-          </p>
-        </a>
-      </article>
-
-      <article class="journal-entry">
-        <a class="journal-entry-link" href="#">
-          <div class="journal-entry-meta">
-            <span class="journal-entry-type">Разбор</span>
-            <time class="journal-entry-date" datetime="2026-03-28">28 марта 2026</time>
-          </div>
-          <h3 class="journal-entry-title">Вторая запись для структуры</h3>
-          <p class="journal-entry-subtitle">
-            Позже этот блок будет автоматически заполняться реальными публикациями.
-          </p>
-        </a>
-      </article>
-
-      <article class="journal-entry">
-        <a class="journal-entry-link" href="#">
-          <div class="journal-entry-meta">
-            <span class="journal-entry-type">Тезис</span>
-            <time class="journal-entry-date" datetime="2026-03-17">17 марта 2026</time>
-          </div>
-          <h3 class="journal-entry-title">Короткая форма для жёсткой фиксации мысли</h3>
-          <p class="journal-entry-subtitle">
-            Для записей, которые не требуют большого текста, но требуют точности.
-          </p>
-        </a>
-      </article>
-    </section>
-
-    <section class="journal-subscribe" aria-label="Подписка">
-      <p class="journal-subscribe-title">Получать новые записи</p>
-      <p class="journal-subscribe-text">
-        Позже сюда можно будет подключить email-подписку, RSS или уведомления PWA.
-      </p>
-    </section>
-
-    <div class="panel-actions" style="margin-top: 28px;">
-      <a class="panel-btn" href="/index.html">На главную</a>
+      <div class="panel-actions">
+        <a class="panel-btn" href="/index.html">На главную</a>
+      </div>
     </div>
   </main>
 
   <footer class="footer">
     <p>© 2025 AN.KI by Yana Makhzian</p>
   </footer>
+
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll('[data-filter]');
+      const entries = document.querySelectorAll('.journal-entry');
+      const empty = document.getElementById('journalEmpty');
+
+      function updateFilter(filter) {
+        let visibleCount = 0;
+
+        entries.forEach((entry) => {
+          const type = entry.getAttribute('data-type');
+          const show = filter === 'all' || type === filter;
+          entry.style.display = show ? 'block' : 'none';
+          if (show) visibleCount += 1;
+        });
+
+        if (empty) {
+          empty.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        buttons.forEach((button) => {
+          button.classList.toggle('is-active', button.getAttribute('data-filter') === filter);
+        });
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', function () {
+          updateFilter(this.getAttribute('data-filter'));
+        });
+      });
+
+      updateFilter('all');
+    })();
+  </script>
 
 </body>
 </html>
