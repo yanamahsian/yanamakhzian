@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!doctype html>
 <html lang="ru">
 <head>
@@ -8,16 +11,17 @@
 
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/design.css" />
-
   <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="theme-color" content="#f5f5f3" />
-
   <script src="/script.js" defer></script>
 
   <style>
     body.journal-page{
+      margin:0;
+      padding:0;
       background:#f5f5f3;
       color:#1a1a1a;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
     .journal-page #stars,
@@ -27,7 +31,7 @@
 
     .journal-page .site-header{
       background:rgba(245,245,243,0.96);
-      border-bottom:1px solid rgba(26,26,26,0.10);
+      border-bottom:1px solid rgba(26,26,26,0.08);
       backdrop-filter:blur(8px);
     }
 
@@ -41,7 +45,7 @@
     }
 
     .journal-page .burger-btn:hover{
-      border-color:rgba(26,26,26,0.34);
+      border-color:rgba(26,26,26,0.28);
     }
 
     .journal-page .burger-icon::before,
@@ -76,188 +80,153 @@
       border-color:rgba(26,26,26,0.28);
     }
 
-    .journal-page .page{
-      max-width:1100px;
-      margin:78px auto 56px;
-      padding:0 28px 40px;
-      background:transparent;
+    .journal-main{
+      width:100%;
+      max-width:none;
+      margin:0;
+      padding:0;
     }
 
-    .journal-shell{
-      display:grid;
-      grid-template-columns:minmax(0, 1fr);
-      gap:0;
+    .journal-wrap{
+      width:100%;
+      max-width:980px;
+      margin:0 auto;
+      padding:56px 32px 48px;
     }
 
     .journal-header{
-      padding:36px 0 22px;
-      border-bottom:1px solid rgba(26,26,26,0.10);
+      padding:10px 0 30px;
+      border-bottom:1px solid rgba(26,26,26,0.08);
+      margin-bottom:18px;
     }
 
     .journal-kicker{
-      margin:0 0 10px;
+      margin:0 0 12px;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
       font-size:11px;
       letter-spacing:0.22em;
       text-transform:uppercase;
-      color:#6a6a6a;
+      color:#777;
     }
 
     .journal-title{
       margin:0;
-      font-size:56px;
-      line-height:1.04;
+      font-size:64px;
+      line-height:1;
       font-weight:500;
-      letter-spacing:-0.02em;
-      color:#111111;
-      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing:-0.03em;
+      color:#111;
     }
 
     .journal-intro{
-      margin:16px 0 0;
-      max-width:640px;
-      font-size:16px;
-      line-height:1.8;
-      color:#4e4e4e;
-    }
-
-    .journal-topnav{
-      display:flex;
-      gap:22px;
-      align-items:center;
-      flex-wrap:wrap;
-      padding:18px 0 24px;
-      border-bottom:1px solid rgba(26,26,26,0.10);
-    }
-
-    .journal-topnav button{
-      appearance:none;
-      border:none;
-      background:none;
-      padding:0;
-      margin:0;
-      color:#666666;
-      font-size:14px;
-      line-height:1;
-      letter-spacing:0.02em;
-      cursor:pointer;
-      transition:opacity .2s ease;
-    }
-
-    .journal-topnav button:hover{
-      color:#111111;
-    }
-
-    .journal-topnav button.is-active{
-      color:#111111;
-      font-weight:600;
+      margin:18px 0 0;
+      max-width:720px;
+      font-size:20px;
+      line-height:1.75;
+      color:#444;
     }
 
     .journal-list{
-      padding:8px 0 0;
+      display:block;
+      width:100%;
     }
 
     .journal-entry{
       display:block;
-      padding:26px 0 30px;
-      border-bottom:1px solid rgba(26,26,26,0.10);
       text-decoration:none;
       color:inherit;
+      padding:26px 0 30px;
+      border-bottom:1px solid rgba(26,26,26,0.08);
     }
 
     .journal-entry:hover .journal-entry-title{
-      opacity:0.78;
-    }
-
-    .journal-entry-meta{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-bottom:10px;
-      font-size:11px;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      color:#747474;
+      opacity:0.75;
     }
 
     .journal-entry-type{
-      display:inline-block;
+      display:block;
+      margin:0 0 10px;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      font-size:11px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:#7a7a7a;
     }
 
     .journal-entry-title{
       margin:0;
-      max-width:780px;
-      font-size:30px;
-      line-height:1.18;
+      max-width:860px;
+      font-size:34px;
+      line-height:1.16;
       font-weight:500;
-      letter-spacing:-0.01em;
-      color:#111111;
-      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing:-0.02em;
+      color:#111;
       transition:opacity .2s ease;
     }
 
     .journal-entry-subtitle{
       margin:12px 0 0;
-      max-width:700px;
-      font-size:16px;
+      max-width:760px;
+      font-size:17px;
       line-height:1.85;
       color:#4b4b4b;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
     .journal-empty{
-      display:none;
-      padding:34px 0 12px;
-      color:#666666;
-      font-size:15px;
+      padding:28px 0 10px;
+      font-size:16px;
       line-height:1.8;
+      color:#666;
     }
 
-    .journal-footer-note{
+    .journal-foot{
       padding-top:26px;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
       font-size:12px;
-      line-height:1.7;
-      color:#777777;
+      color:#7a7a7a;
     }
 
-    .journal-page .panel-actions{
+    .journal-actions{
       margin-top:28px;
     }
 
-    .journal-page .panel-btn{
-      background:#ffffff;
-      color:#111111;
-      border:1px solid rgba(26,26,26,0.16);
-      border-radius:0;
-      min-width:148px;
-      min-height:42px;
-      padding:10px 18px;
-      font-size:12px;
-      letter-spacing:0.10em;
-      text-transform:uppercase;
-      text-decoration:none;
+    .journal-home-link{
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      min-width:150px;
+      min-height:42px;
+      padding:10px 18px;
+      border:1px solid rgba(26,26,26,0.16);
+      color:#111;
+      text-decoration:none;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      font-size:12px;
+      letter-spacing:0.10em;
+      text-transform:uppercase;
+      background:#fff;
     }
 
-    .journal-page .panel-btn:hover{
-      background:#f0f0ed;
-      color:#111111;
-      border-color:rgba(26,26,26,0.32);
+    .journal-home-link:hover{
+      background:#efefeb;
+      border-color:rgba(26,26,26,0.28);
+      color:#111;
     }
 
     .journal-page .footer{
-      max-width:1100px;
-      margin:14px auto 40px;
-      padding:0 28px;
-      color:#777777;
-      border-top:1px solid rgba(26,26,26,0.10);
+      max-width:980px;
+      margin:10px auto 40px;
+      padding:0 32px;
+      color:#777;
+      font-size:12px;
+      border-top:1px solid rgba(26,26,26,0.08);
       padding-top:16px;
     }
 
     @media (max-width: 900px){
-      .journal-page .page{
-        margin-top:58px;
-        padding:0 18px 32px;
+      .journal-wrap{
+        padding:40px 18px 34px;
       }
 
       .journal-title{
@@ -265,15 +234,16 @@
       }
 
       .journal-intro{
-        font-size:15px;
+        font-size:17px;
+        line-height:1.7;
       }
 
       .journal-entry{
-        padding:22px 0 26px;
+        padding:22px 0 24px;
       }
 
       .journal-entry-title{
-        font-size:24px;
+        font-size:25px;
       }
 
       .journal-entry-subtitle{
@@ -316,8 +286,8 @@
     <div class="drawer-bottom">Все права защищены.</div>
   </aside>
 
-  <main class="page fade-in" role="main">
-    <div class="journal-shell">
+  <main class="journal-main" role="main">
+    <div class="journal-wrap">
       <header class="journal-header">
         <p class="journal-kicker">Издание</p>
         <h1 class="journal-title">Журнал</h1>
@@ -326,51 +296,40 @@
         </p>
       </header>
 
-      <nav class="journal-topnav" aria-label="Разделы журнала">
-        <button class="is-active" type="button" data-filter="all">Все</button>
-        <button type="button" data-filter="essay">Эссе</button>
-        <button type="button" data-filter="article">Статьи</button>
-        <button type="button" data-filter="short">Короткие</button>
-      </nav>
-
       <section class="journal-list" aria-label="Список материалов">
-        {% assign has_posts = false %}
-        {% for post in site.posts %}
-          {% assign has_posts = true %}
-          <a class="journal-entry" href="{{ post.url }}" data-type="{{ post.type | downcase }}">
-            <div class="journal-entry-meta">
-              <span class="journal-entry-type">
-                {% case post.type %}
-                  {% when "Эссе" %}Эссе
-                  {% when "Статья" %}Статья
-                  {% when "Короткое" %}Короткая запись
-                  {% when "essay" %}Эссе
-                  {% when "article" %}Статья
-                  {% when "short" %}Короткая запись
-                  {% else %}Материал
-                {% endcase %}
-              </span>
-            </div>
+        {% if site.posts.size > 0 %}
+          {% for post in site.posts %}
+            <a class="journal-entry" href="{{ post.url }}">
+              {% if post.type %}
+                <span class="journal-entry-type">
+                  {% case post.type %}
+                    {% when "Эссе" %}Эссе
+                    {% when "Статья" %}Статья
+                    {% when "Короткое" %}Короткая запись
+                    {% when "essay" %}Эссе
+                    {% when "article" %}Статья
+                    {% when "short" %}Короткая запись
+                    {% else %}Материал
+                  {% endcase %}
+                </span>
+              {% endif %}
 
-            <h2 class="journal-entry-title">{{ post.title }}</h2>
+              <h2 class="journal-entry-title">{{ post.title }}</h2>
 
-            {% if post.subtitle %}
-              <p class="journal-entry-subtitle">{{ post.subtitle }}</p>
-            {% endif %}
-          </a>
-        {% endfor %}
-
-        <div class="journal-empty" id="journalEmpty"{% if has_posts == false %} style="display:block;"{% endif %}>
-          В журнале пока нет материалов.
-        </div>
+              {% if post.subtitle %}
+                <p class="journal-entry-subtitle">{{ post.subtitle }}</p>
+              {% endif %}
+            </a>
+          {% endfor %}
+        {% else %}
+          <div class="journal-empty">Пока здесь нет материалов.</div>
+        {% endif %}
       </section>
 
-      <div class="journal-footer-note">
-        anki.systems
-      </div>
+      <div class="journal-foot">anki.systems</div>
 
-      <div class="panel-actions">
-        <a class="panel-btn" href="/index.html">На главную</a>
+      <div class="journal-actions">
+        <a class="journal-home-link" href="/index.html">На главную</a>
       </div>
     </div>
   </main>
@@ -378,41 +337,6 @@
   <footer class="footer">
     <p>© 2025 AN.KI by Yana Makhzian</p>
   </footer>
-
-  <script>
-    (function () {
-      const buttons = document.querySelectorAll('[data-filter]');
-      const entries = document.querySelectorAll('.journal-entry');
-      const empty = document.getElementById('journalEmpty');
-
-      function updateFilter(filter) {
-        let visibleCount = 0;
-
-        entries.forEach((entry) => {
-          const type = (entry.getAttribute('data-type') || '').toLowerCase();
-          const show = filter === 'all' || type === filter;
-          entry.style.display = show ? 'block' : 'none';
-          if (show) visibleCount += 1;
-        });
-
-        if (empty) {
-          empty.style.display = visibleCount === 0 ? 'block' : 'none';
-        }
-
-        buttons.forEach((button) => {
-          button.classList.toggle('is-active', button.getAttribute('data-filter') === filter);
-        });
-      }
-
-      buttons.forEach((button) => {
-        button.addEventListener('click', function () {
-          updateFilter(this.getAttribute('data-filter'));
-        });
-      });
-
-      updateFilter('all');
-    })();
-  </script>
 
 </body>
 </html>
