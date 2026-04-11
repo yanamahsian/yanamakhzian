@@ -24,15 +24,14 @@ content:
           format: yyyy-MM-dd
 
       - name: type
-        label: Тип записи
+        label: Тип
         type: select
         required: true
         options:
           values:
-            - Журнал
-            - Разбор
-            - Тезис
             - Эссе
+            - Статья
+            - Короткое
 
       - name: subtitle
         label: Подзаголовок
@@ -45,6 +44,6 @@ content:
         default: post
 
       - name: body
-        label: Текст записи
+        label: Текст
         type: rich-text
         required: true
