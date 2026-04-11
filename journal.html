@@ -4,71 +4,6 @@ layout: null
 <!doctype html>
 <html lang="ru">
 <head>
-  <style>
-/* === ЖУРНАЛ — ПОЛНЫЙ СБРОС В ТЁМНОМ САЙТЕ === */
-
-body {
-    background: #ffffff !important;
-    color: #111111 !important;
-}
-
-/* контейнер */
-.journal-container {
-    max-width: 720px;
-    margin: 120px auto;
-    padding: 0 20px;
-}
-
-/* маленький верхний текст */
-.journal-label {
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: #999;
-    margin-bottom: 20px;
-}
-
-/* ЗАГОЛОВОК */
-.journal-title {
-    font-size: 56px;
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 20px;
-}
-
-/* описание */
-.journal-description {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 60px;
-}
-
-/* пост */
-.journal-post {
-    margin-bottom: 40px;
-}
-
-.journal-post a {
-    text-decoration: none;
-    color: #000;
-}
-
-.journal-post-title {
-    font-size: 22px;
-    margin-bottom: 6px;
-}
-
-.journal-post-subtitle {
-    font-size: 14px;
-    color: #777;
-}
-
-/* если пусто */
-.journal-empty {
-    color: #888;
-    margin-top: 40px;
-}
-</style>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Журнал — AN.KI</title>
@@ -77,248 +12,260 @@ body {
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/design.css" />
   <link rel="manifest" href="/manifest.webmanifest" />
-  <meta name="theme-color" content="#f5f5f3" />
+  <meta name="theme-color" content="#ffffff" />
   <script src="/script.js" defer></script>
 
   <style>
-    body.journal-page{
-      margin:0;
-      padding:0;
-      background:#f5f5f3;
-      color:#1a1a1a;
+    html,
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #ffffff !important;
+      color: #111111 !important;
+    }
+
+    body.journal-page {
+      background: #ffffff !important;
+      color: #111111 !important;
       font-family: Georgia, "Times New Roman", serif;
     }
 
     .journal-page #stars,
-    .journal-page .nebula{
-      display:none !important;
+    .journal-page .nebula {
+      display: none !important;
     }
 
-    .journal-page .site-header{
-      background:rgba(245,245,243,0.96);
-      border-bottom:1px solid rgba(26,26,26,0.08);
-      backdrop-filter:blur(8px);
+    .journal-page .site-header {
+      background: rgba(255, 255, 255, 0.96) !important;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08) !important;
+      backdrop-filter: blur(8px);
     }
 
-    .journal-page .brand-mini span{
-      color:#4f4f4f;
+    .journal-page .brand-mini span {
+      color: #4f4f4f !important;
     }
 
-    .journal-page .burger-btn{
-      border:1px solid rgba(26,26,26,0.14);
-      background:transparent;
+    .journal-page .burger-btn {
+      border: 1px solid rgba(17, 17, 17, 0.14) !important;
+      background: transparent !important;
     }
 
-    .journal-page .burger-btn:hover{
-      border-color:rgba(26,26,26,0.28);
+    .journal-page .burger-btn:hover {
+      border-color: rgba(17, 17, 17, 0.28) !important;
     }
 
     .journal-page .burger-icon::before,
     .journal-page .burger-icon::after,
-    .journal-page .burger-icon span{
-      background:#1a1a1a;
+    .journal-page .burger-icon span {
+      background: #111111 !important;
     }
 
-    .journal-page .nav-overlay{
-      background:rgba(0,0,0,0.34);
+    .journal-page .nav-overlay {
+      background: rgba(0, 0, 0, 0.34) !important;
     }
 
-    .journal-page .nav-drawer{
-      background:#f5f5f3;
-      border-left:1px solid rgba(26,26,26,0.10);
+    .journal-page .nav-drawer {
+      background: #ffffff !important;
+      border-left: 1px solid rgba(17, 17, 17, 0.10) !important;
     }
 
     .journal-page .nav-drawer h3,
-    .journal-page .drawer-bottom{
-      color:#5c5c5c;
+    .journal-page .drawer-bottom {
+      color: #5c5c5c !important;
     }
 
-    .journal-page .drawer-nav a{
-      color:#1a1a1a;
-      border:1px solid rgba(26,26,26,0.10);
-      background:transparent;
+    .journal-page .drawer-nav a {
+      color: #111111 !important;
+      border: 1px solid rgba(17, 17, 17, 0.10) !important;
+      background: transparent !important;
     }
 
     .journal-page .drawer-nav a:hover,
-    .journal-page .drawer-nav a.active{
-      color:#1a1a1a;
-      border-color:rgba(26,26,26,0.28);
+    .journal-page .drawer-nav a.active {
+      color: #111111 !important;
+      border-color: rgba(17, 17, 17, 0.28) !important;
     }
 
-    .journal-main{
-      width:100%;
-      max-width:none;
-      margin:0;
-      padding:0;
+    .journal-main {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      background: #ffffff !important;
     }
 
-    .journal-wrap{
-      width:100%;
-      max-width:980px;
-      margin:0 auto;
-      padding:56px 32px 48px;
+    .journal-wrap {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 72px 32px 48px;
+      background: #ffffff !important;
     }
 
-    .journal-header{
-      padding:10px 0 30px;
-      border-bottom:1px solid rgba(26,26,26,0.08);
-      margin-bottom:18px;
+    .journal-header {
+      padding: 10px 0 34px;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+      margin-bottom: 18px;
     }
 
-    .journal-kicker{
-      margin:0 0 12px;
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-      font-size:11px;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
-      color:#777;
+    .journal-kicker {
+      margin: 0 0 14px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #777777;
     }
 
-    .journal-title{
-      margin:0;
-      font-size:64px;
-      line-height:1;
-      font-weight:500;
-      letter-spacing:-0.03em;
-      color:#111;
+    .journal-title {
+      margin: 0;
+      font-size: 72px;
+      line-height: 0.98;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      color: #111111 !important;
+      opacity: 1 !important;
     }
 
-    .journal-intro{
-      margin:18px 0 0;
-      max-width:720px;
-      font-size:20px;
-      line-height:1.75;
-      color:#444;
+    .journal-intro {
+      margin: 22px 0 0;
+      max-width: 760px;
+      font-size: 22px;
+      line-height: 1.7;
+      color: #444444 !important;
     }
 
-    .journal-list{
-      display:block;
-      width:100%;
+    .journal-list {
+      display: block;
+      width: 100%;
+      background: #ffffff !important;
     }
 
-    .journal-entry{
-      display:block;
-      text-decoration:none;
-      color:inherit;
-      padding:26px 0 30px;
-      border-bottom:1px solid rgba(26,26,26,0.08);
+    .journal-entry {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      padding: 28px 0 32px;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+      background: #ffffff !important;
     }
 
-    .journal-entry:hover .journal-entry-title{
-      opacity:0.75;
+    .journal-entry:hover .journal-entry-title {
+      opacity: 0.75;
     }
 
-    .journal-entry-type{
-      display:block;
-      margin:0 0 10px;
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-      font-size:11px;
-      letter-spacing:0.18em;
-      text-transform:uppercase;
-      color:#7a7a7a;
+    .journal-entry-type {
+      display: block;
+      margin: 0 0 10px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #7a7a7a !important;
     }
 
-    .journal-entry-title{
-      margin:0;
-      max-width:860px;
-      font-size:34px;
-      line-height:1.16;
-      font-weight:500;
-      letter-spacing:-0.02em;
-      color:#111;
-      transition:opacity .2s ease;
+    .journal-entry-title {
+      margin: 0;
+      max-width: 860px;
+      font-size: 34px;
+      line-height: 1.16;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #111111 !important;
+      transition: opacity 0.2s ease;
     }
 
-    .journal-entry-subtitle{
-      margin:12px 0 0;
-      max-width:760px;
-      font-size:17px;
-      line-height:1.85;
-      color:#4b4b4b;
+    .journal-entry-subtitle {
+      margin: 12px 0 0;
+      max-width: 760px;
+      font-size: 17px;
+      line-height: 1.85;
+      color: #4b4b4b !important;
       font-family: Georgia, "Times New Roman", serif;
     }
 
-    .journal-empty{
-      padding:28px 0 10px;
-      font-size:16px;
-      line-height:1.8;
-      color:#666;
+    .journal-empty {
+      padding: 28px 0 10px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #666666 !important;
     }
 
-    .journal-foot{
-      padding-top:26px;
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-      font-size:12px;
-      color:#7a7a7a;
+    .journal-foot {
+      padding-top: 26px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 12px;
+      color: #7a7a7a !important;
     }
 
-    .journal-actions{
-      margin-top:28px;
+    .journal-actions {
+      margin-top: 28px;
     }
 
-    .journal-home-link{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:150px;
-      min-height:42px;
-      padding:10px 18px;
-      border:1px solid rgba(26,26,26,0.16);
-      color:#111;
-      text-decoration:none;
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-      font-size:12px;
-      letter-spacing:0.10em;
-      text-transform:uppercase;
-      background:#fff;
+    .journal-home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      min-height: 42px;
+      padding: 10px 18px;
+      border: 1px solid rgba(17, 17, 17, 0.16);
+      color: #111111 !important;
+      text-decoration: none;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      background: #ffffff !important;
     }
 
-    .journal-home-link:hover{
-      background:#efefeb;
-      border-color:rgba(26,26,26,0.28);
-      color:#111;
+    .journal-home-link:hover {
+      background: #efefeb !important;
+      border-color: rgba(17, 17, 17, 0.28) !important;
+      color: #111111 !important;
     }
 
-    .journal-page .footer{
-      max-width:980px;
-      margin:10px auto 40px;
-      padding:0 32px;
-      color:#777;
-      font-size:12px;
-      border-top:1px solid rgba(26,26,26,0.08);
-      padding-top:16px;
+    .journal-page .footer {
+      max-width: 980px;
+      margin: 10px auto 40px;
+      padding: 0 32px;
+      color: #777777 !important;
+      font-size: 12px;
+      border-top: 1px solid rgba(17, 17, 17, 0.08);
+      padding-top: 16px;
+      background: #ffffff !important;
     }
 
-    @media (max-width: 900px){
-      .journal-wrap{
-        padding:40px 18px 34px;
+    @media (max-width: 900px) {
+      .journal-wrap {
+        padding: 44px 18px 34px;
       }
 
-      .journal-title{
-        font-size:42px;
+      .journal-title {
+        font-size: 52px;
       }
 
-      .journal-intro{
-        font-size:17px;
-        line-height:1.7;
+      .journal-intro {
+        font-size: 18px;
+        line-height: 1.7;
       }
 
-      .journal-entry{
-        padding:22px 0 24px;
+      .journal-entry {
+        padding: 22px 0 24px;
       }
 
-      .journal-entry-title{
-        font-size:25px;
+      .journal-entry-title {
+        font-size: 25px;
       }
 
-      .journal-entry-subtitle{
-        font-size:15px;
-        line-height:1.75;
+      .journal-entry-subtitle {
+        font-size: 15px;
+        line-height: 1.75;
       }
 
-      .journal-page .footer{
-        padding:0 18px;
-        padding-top:16px;
+      .journal-page .footer {
+        padding: 0 18px;
+        padding-top: 16px;
       }
     }
   </style>
@@ -381,7 +328,7 @@ body {
 
               <h2 class="journal-entry-title">{{ post.title }}</h2>
 
-              {% if post.subtitle %}
+              {% if post.subtitle and post.subtitle != "" %}
                 <p class="journal-entry-subtitle">{{ post.subtitle }}</p>
               {% endif %}
             </a>
