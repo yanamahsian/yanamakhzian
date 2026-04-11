@@ -21,7 +21,6 @@
   { href: "workbooks.html",       label: "Воркбуки" },
   { href: "art.html",             label: "Арт" },
   { href: "aroma.html",           label: "Ароматы" },
-  { href: "essays.html",          label: "Эссе" },
   { href: "journal.html",          label: "Журнал" },
   { href: "artifacts.html",       label: "Артефакты AN.KI" },
 
