@@ -41,7 +41,7 @@ content:
       - name: layout
         label: Layout
         type: hidden
-        default: post
+        value: post
 
       - name: body
         label: Текст
