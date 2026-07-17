@@ -4,8 +4,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Контакты — AN.KI</title>
-  <meta name="description" content="Контакты AN.KI: WhatsApp и Telegram." />
+
+  <title>Контакты и заявка — AN.KI</title>
+
+  <meta
+    name="description"
+    content="Предварительная заявка на личную философскую работу с AN.KI."
+  />
 
   <!-- ЕДИНЫЙ ПОРЯДОК СТИЛЕЙ -->
   <link rel="stylesheet" href="/style.css" />
@@ -17,6 +22,250 @@
 
   <!-- JS -->
   <script src="/script.js" defer></script>
+
+  <!-- СТИЛИ ТОЛЬКО ДЛЯ АНКЕТЫ -->
+  <style>
+    .application-section {
+      width: min(920px, 100%);
+      margin: 48px auto 72px;
+    }
+
+    .application-intro {
+      margin-bottom: 28px;
+      padding: 28px;
+      border: 1px solid rgba(190, 155, 88, 0.34);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(95, 13, 30, 0.16),
+          rgba(4, 8, 24, 0.82)
+        );
+    }
+
+    .application-intro h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .application-intro p {
+      max-width: 760px;
+      margin: 0;
+      line-height: 1.75;
+      opacity: 0.84;
+    }
+
+    .application-intro p + p {
+      margin-top: 10px;
+    }
+
+    .application-form {
+      padding: clamp(22px, 4vw, 38px);
+      border: 1px solid rgba(190, 155, 88, 0.28);
+      background: rgba(2, 6, 22, 0.84);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .form-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label,
+    .form-label {
+      font-size: 0.94rem;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid rgba(190, 155, 88, 0.28);
+      border-radius: 0;
+      outline: none;
+      background: rgba(255, 255, 255, 0.025);
+      color: inherit;
+      font: inherit;
+      line-height: 1.55;
+      transition:
+        border-color 160ms ease,
+        background-color 160ms ease;
+    }
+
+    .form-field input,
+    .form-field select {
+      min-height: 50px;
+      padding: 12px 14px;
+    }
+
+    .form-field textarea {
+      min-height: 142px;
+      padding: 14px;
+      resize: vertical;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: rgba(214, 176, 101, 0.78);
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .form-field select option {
+      background: #070b1c;
+      color: #f3ede1;
+    }
+
+    .form-field small {
+      line-height: 1.5;
+      opacity: 0.58;
+    }
+
+    .form-checks {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(190, 155, 88, 0.18);
+    }
+
+    .form-check {
+      display: grid;
+      grid-template-columns: 20px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      line-height: 1.65;
+      cursor: pointer;
+    }
+
+    .form-check input {
+      width: 17px;
+      height: 17px;
+      margin: 5px 0 0;
+      accent-color: #6d1428;
+    }
+
+    .application-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .application-submit {
+      min-width: 220px;
+      min-height: 52px;
+      padding: 14px 24px;
+      border: 1px solid rgba(194, 150, 84, 0.5);
+      border-radius: 0;
+      background: #651327;
+      color: #fff7ed;
+      font: inherit;
+      letter-spacing: 0.045em;
+      cursor: pointer;
+      transition:
+        background-color 160ms ease,
+        opacity 160ms ease;
+    }
+
+    .application-submit:hover {
+      background: #7a1930;
+    }
+
+    .application-submit:disabled {
+      cursor: wait;
+      opacity: 0.58;
+    }
+
+    .application-status {
+      display: none;
+      flex: 1;
+      min-width: 240px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .application-status.is-visible {
+      display: block;
+    }
+
+    .application-status.is-success {
+      color: #d8c39b;
+    }
+
+    .application-status.is-error {
+      color: #e2a3ad;
+    }
+
+    .application-note {
+      margin: 22px 0 0;
+      font-size: 0.87rem;
+      line-height: 1.65;
+      opacity: 0.52;
+    }
+
+    .secondary-contacts {
+      width: min(920px, 100%);
+      margin: 0 auto;
+    }
+
+    .secondary-contacts-heading {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+      font-weight: 500;
+    }
+
+    .secondary-contacts-note {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      text-align: center;
+      line-height: 1.7;
+      opacity: 0.67;
+    }
+
+    @media (max-width: 720px) {
+      .application-section {
+        margin-top: 34px;
+      }
+
+      .application-intro {
+        padding: 22px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field-full {
+        grid-column: auto;
+      }
+
+      .application-actions {
+        align-items: stretch;
+      }
+
+      .application-submit {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body class="contacts-page">
@@ -29,11 +278,13 @@
         <span>AN.KI</span>
       </a>
 
-      <button class="burger-btn"
-              type="button"
-              data-burger
-              aria-label="Меню"
-              aria-expanded="false">
+      <button
+        class="burger-btn"
+        type="button"
+        data-burger
+        aria-label="Меню"
+        aria-expanded="false"
+      >
         <span class="burger-icon"><span></span></span>
       </button>
     </div>
@@ -42,7 +293,11 @@
   <!-- NAV OVERLAY + DRAWER (всегда один) -->
   <div class="nav-overlay" data-nav-overlay></div>
 
-  <aside class="nav-drawer" data-nav-drawer aria-label="Навигация сайта">
+  <aside
+    class="nav-drawer"
+    data-nav-drawer
+    aria-label="Навигация сайта"
+  >
     <h3>Навигация</h3>
 
     <nav class="drawer-nav">
@@ -63,39 +318,324 @@
     </div>
   </aside>
 
-  <!-- ФОН (если отключишь в CSS — ничего не сломается) -->
+  <!-- ФОН -->
   <canvas id="stars" aria-hidden="true"></canvas>
   <div class="nebula" aria-hidden="true"></div>
 
   <!-- CONTENT -->
   <main class="page" role="main">
-    <h1 class="title">Контакты</h1>
-    <p class="subtitle">Если ты понимаешь, что тебе сюда — напиши.</p>
+    <h1 class="title">Личный контакт</h1>
+    <p class="subtitle">Работа начинается с предварительного отбора.</p>
 
-    <section class="contact-block" aria-label="Контакты">
-      <div class="contact-item">
-        <h2>WhatsApp</h2>
-        <p>Напиши в WhatsApp.</p>
-        <a class="whatsapp-btn"
-           href="https://wa.me/4915161016316"
-           target="_blank"
-           rel="noopener">Открыть WhatsApp</a>
+    <section
+      class="application-section"
+      aria-labelledby="application-title"
+    >
+      <div class="application-intro">
+        <h2 id="application-title">Заявка на работу</h2>
+
+        <p>
+          Я работаю не со всеми. Перед записью необходимо пройти
+          предварительную анкету.
+        </p>
+
+        <p>
+          Если заявка будет одобрена, вы получите письмо с условиями
+          оплаты и дальнейшей записи. Отправка анкеты не гарантирует
+          проведение встречи.
+        </p>
       </div>
 
-      <div class="contact-item">
-        <h2>Telegram</h2>
-        <p>Напиши в Telegram.</p>
-        <a class="telegram-btn"
-           href="https://t.me/Makhzian"
-           target="_blank"
-           rel="noopener">Открыть Telegram</a>
-      </div>
+      <form
+        class="application-form"
+        action="https://formspree.io/f/xjgnypww"
+        method="post"
+        data-application-form
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="Новая заявка на личную работу — AN.KI"
+        />
+
+        <input
+          type="text"
+          name="_gotcha"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+          style="position:absolute;left:-9999px;width:1px;height:1px;"
+        />
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="applicant-name">Имя</label>
+            <input
+              id="applicant-name"
+              name="Имя"
+              type="text"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="applicant-email">Электронная почта</label>
+            <input
+              id="applicant-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="contact-method">Предпочтительный способ связи</label>
+            <select
+              id="contact-method"
+              name="Предпочтительный способ связи"
+              required
+            >
+              <option value="" selected disabled>Выберите вариант</option>
+              <option value="Электронная почта">Электронная почта</option>
+              <option value="Telegram">Telegram</option>
+              <option value="WhatsApp">WhatsApp</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="messenger-contact">
+              Контакт в Telegram или WhatsApp
+            </label>
+            <input
+              id="messenger-contact"
+              name="Контакт в мессенджере"
+              type="text"
+              autocomplete="off"
+              placeholder="@username или номер телефона"
+            />
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="selected-format">
+              Какой формат работы вы выбираете?
+            </label>
+            <input
+              id="selected-format"
+              name="Выбранный формат работы"
+              type="text"
+              placeholder="Укажите название формата со страницы услуг"
+              required
+            />
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="main-question">
+              С каким вопросом вы приходите?
+            </label>
+            <textarea
+              id="main-question"
+              name="Вопрос для работы"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="previous-attempts">
+              Что вы уже предпринимали, чтобы решить этот вопрос?
+            </label>
+            <textarea
+              id="previous-attempts"
+              name="Что уже было предпринято"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="expected-result">
+              Какого результата вы ожидаете от встречи?
+            </label>
+            <textarea
+              id="expected-result"
+              name="Ожидаемый результат"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="cultural-references">
+              Какие ваши любимые писатели, художники и кинорежиссёры?
+            </label>
+            <textarea
+              id="cultural-references"
+              name="Любимые писатели, художники и кинорежиссёры"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="why-anki">
+              Почему вы обращаетесь именно в AN.KI?
+            </label>
+            <textarea
+              id="why-anki"
+              name="Почему выбран AN.KI"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="additional-information">
+              Что ещё важно знать до встречи?
+            </label>
+            <textarea
+              id="additional-information"
+              name="Дополнительная информация"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="form-checks">
+          <label class="form-check">
+            <input
+              type="checkbox"
+              name="Понимание формата"
+              value="Подтверждено"
+              required
+            />
+
+            <span>
+              Я понимаю, что AN.KI — это философская работа, а не
+              психология, психотерапия, коучинг или эзотерическая практика.
+            </span>
+          </label>
+
+          <label class="form-check">
+            <input
+              type="checkbox"
+              name="Согласие с порядком записи"
+              value="Подтверждено"
+              required
+            />
+
+            <span>
+              Я понимаю, что отправка анкеты не гарантирует запись.
+              Оплата производится только после одобрения заявки.
+            </span>
+          </label>
+
+          <label class="form-check">
+            <input
+              type="checkbox"
+              name="Согласие на обработку данных"
+              value="Подтверждено"
+              required
+            />
+
+            <span>
+              Я разрешаю использовать указанные данные для рассмотрения
+              заявки и связи со мной.
+            </span>
+          </label>
+        </div>
+
+        <div class="application-actions">
+          <button
+            class="application-submit"
+            type="submit"
+            data-submit-button
+          >
+            Отправить заявку
+          </button>
+
+          <p
+            class="application-status"
+            data-form-status
+            role="status"
+            aria-live="polite"
+          ></p>
+        </div>
+
+        <p class="application-note">
+          Не отправляйте через эту форму медицинские документы,
+          пароли, платёжные данные и другую конфиденциальную информацию.
+          AN.KI не оказывает медицинскую или экстренную помощь.
+        </p>
+      </form>
     </section>
-  </main>
+
+    <section
+      class="secondary-contacts"
+      aria-labelledby="other-contacts-title"
+    >
+      <h2
+        class="secondary-contacts-heading"
+        id="other-contacts-title"
+      >
+        Другие вопросы
+      </h2>
+
+      <p class="secondary-contacts-note">
+        Заявки на личную работу рассматриваются только через анкету.
+      </p>
 
   <footer class="footer">
     <p>© 2025 AN.KI by Yana Makhzian</p>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("[data-application-form]");
+      const submitButton = document.querySelector("[data-submit-button]");
+      const status = document.querySelector("[data-form-status]");
+
+      if (!form || !submitButton || !status) {
+        return;
+      }
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Отправка…";
+
+        status.className = "application-status is-visible";
+        status.textContent = "Заявка отправляется.";
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: {
+              "Accept": "application/json"
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error("Form submission failed");
+          }
+
+          form.reset();
+
+          status.className =
+            "application-status is-visible is-success";
+
+          status.textContent =
+            "Заявка отправлена. В случае одобрения вы получите письмо с дальнейшими условиями.";
+        } catch (error) {
+          status.className =
+            "application-status is-visible is-error";
+
+          status.textContent =
+            "Не удалось отправить заявку. Проверьте соединение и попробуйте ещё раз.";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = "Отправить заявку";
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
