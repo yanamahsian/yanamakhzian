@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AN.KI &mdash; АРХИТЕКТУРА ОБРАЗА</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-lang="ru">
+
+<header class="nav">
+  <a href="index.html" class="logotype">
+    <span class="mark">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#ab8a58" stroke-width="1"/></svg>
+    </span>
+    AN.KI
+  </a>
+  <nav class="links">
+    <a href="systems.html">SYSTEMS</a>
+    <a href="architecture.html">ARCHITECTURE</a>
+    <a href="tools.html">TOOLS</a>
+    <a href="image.html" class="active">IMAGE</a>
+    <a href="private.html">PRIVATE</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+  <div style="display:flex; align-items:center; gap:26px;">
+    <div class="lang-toggle">
+      <button data-lang-btn="ru" class="active">RU</button>
+      <span class="sep">/</span>
+      <button data-lang-btn="en">EN</button>
+    </div>
+    <button class="menu-toggle" id="menuOpen">MENU</button>
+  </div>
+</header>
+
+<div class="overlay-menu" id="overlayMenu">
+  <button class="om-close" id="menuClose">CLOSE &#10005;</button>
+  <a href="index.html">AN.KI</a>
+  <a href="systems.html">SYSTEMS</a>
+  <a href="architecture.html">ARCHITECTURE</a>
+  <a href="tools.html">TOOLS</a>
+  <a href="image.html" class="active">IMAGE</a>
+  <a href="private.html">PRIVATE</a>
+  <a href="about.html">ABOUT</a>
+  <div class="om-lang">
+    <button data-lang-btn="ru" class="active">RU</button>
+    <span class="sep">/</span>
+    <button data-lang-btn="en">EN</button>
+  </div>
+</div>
+
+<main>
+  <div class="hero-media hero-media--image">
+    <div class="hero-media-content">
+      <span class="eyebrow">АНКЕТА &mdash; АРХИТЕКТУРА ОБРАЗА</span>
+      <h2 class="t" data-ru="АРХИТЕКТУРА ОБРАЗА"></h2>
+    </div>
+  </div>
+  <div class="container post-hero">
+    <div class="q-wrap" style="padding-top:0;">
+      <a href="image.html" class="back-link t" data-ru="&larr; IMAGE"></a>
+      <h3 style="font-family:var(--serif); font-weight:340; font-size:20px; color:var(--ink-dim); margin-top:26px;" class="t" data-ru="Заявка"></h3>
+
+      <form class="qForm" action="https://formspree.io/f/xjgnypww" method="POST">
+        <input type="hidden" name="request_type" value="image_architecture">
+        <input type="hidden" name="_subject" value="AN.KI &mdash; Архитектура образа">
+        <div class="field">
+          <label class="t" data-ru="Имя"></label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Email"></label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Для кого создаётся архитектура?"></label>
+          <span class="hint t" data-ru="Публичный человек / бренд / проект / другое."></span>
+          <input type="text" name="audience_type">
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Имя человека / название проекта или бренда"></label>
+          <input type="text" name="entity_name">
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Чем вы занимаетесь?"></label>
+          <textarea name="occupation"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Как вас воспринимают сейчас?"></label>
+          <textarea name="current_perception"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Что в существующем публичном образе вам кажется неточным или несобранным?"></label>
+          <textarea name="perceived_inaccuracies"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Каким вы точно не хотите выглядеть?"></label>
+          <textarea name="unwanted_image"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Что должно оставаться узнаваемым независимо от изменения времени и форматов?"></label>
+          <textarea name="must_remain_recognizable"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Какая аудитория уже существует?"></label>
+          <textarea name="existing_audience"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="В каких средах вы присутствуете?"></label>
+          <span class="hint t" data-ru="Сцена / медиа / социальные платформы / сайт / физические пространства / другое."></span>
+          <input type="text" name="presence_channels">
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Какие элементы публичного образа уже существуют?"></label>
+          <textarea name="existing_image_elements"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Что из существующего необходимо сохранить?"></label>
+          <textarea name="elements_to_keep"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Приложите материалы."></label>
+          <span class="hint t" data-ru="Сайт / фотографии / видео / интервью / социальные страницы / бренд-материалы / другое."></span>
+          <input type="text" name="materials">
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Есть ли что-то важное, чего нет в анкете?"></label>
+          <textarea name="additional_notes"></textarea>
+        </div>
+        <div class="field-check">
+          <input type="checkbox" id="agree" name="price_agreement" value="Да" required>
+          <label class="t" for="agree" data-ru="Я понимаю, что стоимость архитектуры образа начинается от &euro;25 000."></label>
+        </div>
+        <button type="submit" class="q-submit t" data-ru="ОТПРАВИТЬ НА РАССМОТРЕНИЕ &rarr;"></button>
+        <div class="q-confirm">
+          <p class="t" data-ru="ПОЛУЧЕНО."></p>
+        </div>
+        <div class="q-error">
+          <p class="t" data-ru="Не удалось отправить заявку. Проверьте соединение и попробуйте ещё раз &mdash; введённые данные сохранены."></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <span class="logotype-sm">AN.KI</span>
+    <nav class="footer-links">
+      <a href="systems.html">SYSTEMS</a>
+      <a href="architecture.html">ARCHITECTURE</a>
+      <a href="tools.html">TOOLS</a>
+      <a href="image.html">IMAGE</a>
+      <a href="private.html">PRIVATE</a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+    <div class="footer-lang">
+      <button data-lang-btn="ru" class="active">RU</button>
+      <span class="sep">/</span>
+      <button data-lang-btn="en">EN</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <a href="#">Privacy</a>
+      <a href="#">Legal</a>
+    </div>
+    <span>&copy; AN.KI</span>
+    <span>YANA MAKHZIAN &mdash; FOUNDER &amp; AUTHOR</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

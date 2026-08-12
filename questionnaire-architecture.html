@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AN.KI &mdash; АРХИТЕКТУРА СИСТЕМ</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-lang="ru">
+
+<header class="nav">
+  <a href="index.html" class="logotype">
+    <span class="mark">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#ab8a58" stroke-width="1"/></svg>
+    </span>
+    AN.KI
+  </a>
+  <nav class="links">
+    <a href="systems.html">SYSTEMS</a>
+    <a href="architecture.html" class="active">ARCHITECTURE</a>
+    <a href="tools.html">TOOLS</a>
+    <a href="image.html">IMAGE</a>
+    <a href="private.html">PRIVATE</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+  <div style="display:flex; align-items:center; gap:26px;">
+    <div class="lang-toggle">
+      <button data-lang-btn="ru" class="active">RU</button>
+      <span class="sep">/</span>
+      <button data-lang-btn="en">EN</button>
+    </div>
+    <button class="menu-toggle" id="menuOpen">MENU</button>
+  </div>
+</header>
+
+<div class="overlay-menu" id="overlayMenu">
+  <button class="om-close" id="menuClose">CLOSE &#10005;</button>
+  <a href="index.html">AN.KI</a>
+  <a href="systems.html">SYSTEMS</a>
+  <a href="architecture.html" class="active">ARCHITECTURE</a>
+  <a href="tools.html">TOOLS</a>
+  <a href="image.html">IMAGE</a>
+  <a href="private.html">PRIVATE</a>
+  <a href="about.html">ABOUT</a>
+  <div class="om-lang">
+    <button data-lang-btn="ru" class="active">RU</button>
+    <span class="sep">/</span>
+    <button data-lang-btn="en">EN</button>
+  </div>
+</div>
+
+<main>
+  <div class="hero-media hero-media--architecture">
+    <div class="hero-media-content">
+      <span class="eyebrow">АНКЕТА &mdash; АРХИТЕКТУРА СИСТЕМ</span>
+      <h2 class="t" data-ru="АРХИТЕКТУРА СИСТЕМ"></h2>
+    </div>
+  </div>
+  <div class="container post-hero">
+    <div class="q-wrap" style="padding-top:0;">
+      <a href="architecture.html" class="back-link t" data-ru="&larr; ARCHITECTURE"></a>
+      <h3 style="font-family:var(--serif); font-weight:340; font-size:20px; color:var(--ink-dim); margin-top:26px;" class="t" data-ru="Предварительная анкета"></h3>
+
+      <form class="qForm" action="https://formspree.io/f/xjgnypww" method="POST">
+        <input type="hidden" name="request_type" value="system_architecture">
+        <input type="hidden" name="_subject" value="AN.KI &mdash; Архитектура систем">
+        <div class="field">
+          <label class="t" data-ru="Имя"></label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Email"></label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Проект / организация"></label>
+          <input type="text" name="project_organization">
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Ваша роль"></label>
+          <input type="text" name="role">
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Что должно существовать в результате этой работы?"></label>
+          <textarea name="desired_outcome"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Для кого создаётся система?"></label>
+          <textarea name="target_users"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Что существует сейчас?"></label>
+          <textarea name="current_state"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Почему существующей конструкции недостаточно?"></label>
+          <textarea name="why_insufficient"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Что новая система должна позволять делать такого, что сейчас невозможно?"></label>
+          <textarea name="new_capabilities"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Какого масштаба предполагается система?"></label>
+          <span class="hint t" data-ru="Локальный / национальный / международный / другое."></span>
+          <input type="text" name="scale">
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Кто будет пользоваться системой или находиться внутри неё?"></label>
+          <textarea name="who_will_use"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Кто будет отвечать за её реализацию после создания архитектуры?"></label>
+          <textarea name="who_will_implement"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Какие ресурсы уже существуют?"></label>
+          <textarea name="existing_resources"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Какие ограничения необходимо учитывать?"></label>
+          <textarea name="constraints"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Предполагаемый общий бюджет реализации"></label>
+          <select name="budget_range">
+            <option value="250000-500000" class="t" data-ru="&euro;250 000&ndash;&euro;500 000"></option>
+            <option value="500000-1000000" class="t" data-ru="&euro;500 000&ndash;&euro;1 млн"></option>
+            <option value="1000000-5000000" class="t" data-ru="&euro;1&ndash;5 млн"></option>
+            <option value="5000000+" class="t" data-ru="&euro;5 млн+"></option>
+            <option value="undecided" class="t" data-ru="Пока не определён"></option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Предполагаемые сроки"></label>
+          <input type="text" name="timeline">
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Приложите существующие материалы."></label>
+          <input type="text" name="existing_materials">
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Что ещё необходимо знать до рассмотрения?"></label>
+          <textarea name="additional_notes"></textarea>
+        </div>
+        <div class="field-check">
+          <input type="checkbox" id="agree" name="price_agreement" value="Да" required>
+          <label class="t" for="agree" data-ru="Я понимаю, что стоимость работы AN.KI над архитектурой системы начинается от &euro;250 000 и не включает бюджет её последующей реализации, если иное не предусмотрено отдельным соглашением."></label>
+        </div>
+        <button type="submit" class="q-submit t" data-ru="ОТПРАВИТЬ НА РАССМОТРЕНИЕ &rarr;"></button>
+        <div class="q-confirm">
+          <p class="t" data-ru="ПОЛУЧЕНО."></p>
+        </div>
+        <div class="q-error">
+          <p class="t" data-ru="Не удалось отправить заявку. Проверьте соединение и попробуйте ещё раз &mdash; введённые данные сохранены."></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <span class="logotype-sm">AN.KI</span>
+    <nav class="footer-links">
+      <a href="systems.html">SYSTEMS</a>
+      <a href="architecture.html">ARCHITECTURE</a>
+      <a href="tools.html">TOOLS</a>
+      <a href="image.html">IMAGE</a>
+      <a href="private.html">PRIVATE</a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+    <div class="footer-lang">
+      <button data-lang-btn="ru" class="active">RU</button>
+      <span class="sep">/</span>
+      <button data-lang-btn="en">EN</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <a href="#">Privacy</a>
+      <a href="#">Legal</a>
+    </div>
+    <span>&copy; AN.KI</span>
+    <span>YANA MAKHZIAN &mdash; FOUNDER &amp; AUTHOR</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

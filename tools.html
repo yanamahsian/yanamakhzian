@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AN.KI &mdash; Tools</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-lang="ru">
+
+<header class="nav">
+  <a href="index.html" class="logotype">
+    <span class="mark">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#ab8a58" stroke-width="1"/></svg>
+    </span>
+    AN.KI
+  </a>
+  <nav class="links">
+    <a href="systems.html">SYSTEMS</a>
+    <a href="architecture.html">ARCHITECTURE</a>
+    <a href="tools.html" class="active">TOOLS</a>
+    <a href="image.html">IMAGE</a>
+    <a href="private.html">PRIVATE</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+  <div style="display:flex; align-items:center; gap:26px;">
+    <div class="lang-toggle">
+      <button data-lang-btn="ru" class="active">RU</button>
+      <span class="sep">/</span>
+      <button data-lang-btn="en">EN</button>
+    </div>
+    <button class="menu-toggle" id="menuOpen">MENU</button>
+  </div>
+</header>
+
+<div class="overlay-menu" id="overlayMenu">
+  <button class="om-close" id="menuClose">CLOSE &#10005;</button>
+  <a href="index.html">AN.KI</a>
+  <a href="systems.html">SYSTEMS</a>
+  <a href="architecture.html">ARCHITECTURE</a>
+  <a href="tools.html" class="active">TOOLS</a>
+  <a href="image.html">IMAGE</a>
+  <a href="private.html">PRIVATE</a>
+  <a href="about.html">ABOUT</a>
+  <div class="om-lang">
+    <button data-lang-btn="ru" class="active">RU</button>
+    <span class="sep">/</span>
+    <button data-lang-btn="en">EN</button>
+  </div>
+</div>
+
+<main>
+  <div class="hero-media hero-media--tools">
+    <div class="hero-media-content">
+      <span class="eyebrow">TOOLS</span>
+      <h2 class="t" data-ru="ИНСТРУМЕНТЫ"></h2>
+      <p class="lede t" data-ru="Готовые инструменты для самостоятельной работы."></p>
+    </div>
+  </div>
+  <div class="container post-hero">
+    <div class="content-block" style="max-width:640px; padding-top:0; border-top:none;">
+      <p class="t" data-ru="Созданы мной для задач, которые не требуют моего непосредственного участия."></p>
+      <p class="t" data-ru="Вы получаете инструмент целиком и работаете с ним самостоятельно &mdash; без сессий и сопровождения."></p>
+    </div>
+    <div class="tools-index"></div>
+  </div>
+
+  <!--
+    TEMPLATE — future tool card (do not render until a real tool exists):
+    [НАЗВАНИЕ]
+    [Одна короткая строка о конкретной задаче.]
+    €XXX
+    ОТКРЫТЬ →
+
+    TEMPLATE — future individual tool page:
+    [НАЗВАНИЕ]
+    Инструмент для самостоятельной работы с [КОНКРЕТНАЯ ЗАДАЧА].
+    ЗАДАЧА — [точное описание задачи]
+    ЧТО ОН ДЕЛАЕТ — [функции]
+    ЧТО ВЫ ПОЛУЧАЕТЕ — [содержимое]
+    ФОРМАТ — Работа полностью самостоятельная. Инструмент не предполагает сессий,
+    проверки результатов или сопровождения с моей стороны. Вы можете проходить его
+    в собственном темпе и возвращаться к нему повторно.
+    €XXX — Однократная покупка.
+    ПОЛУЧИТЬ ИНСТРУМЕНТ →
+  -->
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <span class="logotype-sm">AN.KI</span>
+    <nav class="footer-links">
+      <a href="systems.html">SYSTEMS</a>
+      <a href="architecture.html">ARCHITECTURE</a>
+      <a href="tools.html">TOOLS</a>
+      <a href="image.html">IMAGE</a>
+      <a href="private.html">PRIVATE</a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+    <div class="footer-lang">
+      <button data-lang-btn="ru" class="active">RU</button>
+      <span class="sep">/</span>
+      <button data-lang-btn="en">EN</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <a href="#">Privacy</a>
+      <a href="#">Legal</a>
+    </div>
+    <span>&copy; AN.KI</span>
+    <span>YANA MAKHZIAN &mdash; FOUNDER &amp; AUTHOR</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AN.KI &mdash; ПРИВАТНАЯ СЕССИЯ</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-lang="ru">
+
+<header class="nav">
+  <a href="index.html" class="logotype">
+    <span class="mark">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#ab8a58" stroke-width="1"/></svg>
+    </span>
+    AN.KI
+  </a>
+  <nav class="links">
+    <a href="systems.html">SYSTEMS</a>
+    <a href="architecture.html">ARCHITECTURE</a>
+    <a href="tools.html">TOOLS</a>
+    <a href="image.html">IMAGE</a>
+    <a href="private.html" class="active">PRIVATE</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+  <div style="display:flex; align-items:center; gap:26px;">
+    <div class="lang-toggle">
+      <button data-lang-btn="ru" class="active">RU</button>
+      <span class="sep">/</span>
+      <button data-lang-btn="en">EN</button>
+    </div>
+    <button class="menu-toggle" id="menuOpen">MENU</button>
+  </div>
+</header>
+
+<div class="overlay-menu" id="overlayMenu">
+  <button class="om-close" id="menuClose">CLOSE &#10005;</button>
+  <a href="index.html">AN.KI</a>
+  <a href="systems.html">SYSTEMS</a>
+  <a href="architecture.html">ARCHITECTURE</a>
+  <a href="tools.html">TOOLS</a>
+  <a href="image.html">IMAGE</a>
+  <a href="private.html" class="active">PRIVATE</a>
+  <a href="about.html">ABOUT</a>
+  <div class="om-lang">
+    <button data-lang-btn="ru" class="active">RU</button>
+    <span class="sep">/</span>
+    <button data-lang-btn="en">EN</button>
+  </div>
+</div>
+
+<main>
+  <div class="hero-media hero-media--private">
+    <div class="hero-media-content">
+      <span class="eyebrow">АНКЕТА &mdash; ПРИВАТНАЯ СЕССИЯ</span>
+      <h2 class="t" data-ru="ПРИВАТНАЯ СЕССИЯ"></h2>
+    </div>
+  </div>
+  <div class="container post-hero">
+    <div class="q-wrap" style="padding-top:0;">
+      <a href="private.html" class="back-link t" data-ru="&larr; PRIVATE"></a>
+      <h3 style="font-family:var(--serif); font-weight:340; font-size:20px; color:var(--ink-dim); margin-top:26px;" class="t" data-ru="Заявка"></h3>
+
+      <form class="qForm" action="https://formspree.io/f/xjgnypww" method="POST">
+        <input type="hidden" name="request_type" value="private_session">
+        <input type="hidden" name="_subject" value="AN.KI &mdash; Приватная сессия">
+        <div class="field">
+          <label class="t" data-ru="Имя"></label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Email"></label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Страна / часовой пояс"></label>
+          <input type="text" name="country_timezone">
+        </div>
+        <div class="field">
+          <label class="t" data-ru="С какой задачей вы хотите прийти?"></label>
+          <textarea name="task"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Что происходит сейчас?"></label>
+          <textarea name="current_situation"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Какой результат вы хотите получить?"></label>
+          <textarea name="desired_outcome"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Что вы уже предпринимали?"></label>
+          <textarea name="attempts_so_far"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Почему задача остаётся нерешённой?"></label>
+          <textarea name="why_unsolved"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="Что мне необходимо знать до встречи, чтобы не тратить время сессии на восстановление контекста?"></label>
+          <textarea name="context_notes"></textarea>
+        </div>
+        <div class="field">
+          <label class="t" data-ru="При необходимости приложите материалы или ссылки."></label>
+          <input type="text" name="materials_links">
+        </div>
+        <div class="field-check">
+          <input type="checkbox" id="agree" name="price_agreement" value="Да" required>
+          <label class="t" for="agree" data-ru="Я понимаю, что стоимость приватной сессии составляет &euro;1 500."></label>
+        </div>
+        <button type="submit" class="q-submit t" data-ru="ОТПРАВИТЬ НА РАССМОТРЕНИЕ &rarr;"></button>
+        <div class="q-confirm">
+          <p class="t" data-ru="ПОЛУЧЕНО."></p>
+          <p class="t" data-ru="Я рассмотрю заявку. Если задача подходит для приватной работы, дальнейшая информация придёт на указанный email."></p>
+        </div>
+        <div class="q-error">
+          <p class="t" data-ru="Не удалось отправить заявку. Проверьте соединение и попробуйте ещё раз &mdash; введённые данные сохранены."></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <span class="logotype-sm">AN.KI</span>
+    <nav class="footer-links">
+      <a href="systems.html">SYSTEMS</a>
+      <a href="architecture.html">ARCHITECTURE</a>
+      <a href="tools.html">TOOLS</a>
+      <a href="image.html">IMAGE</a>
+      <a href="private.html">PRIVATE</a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+    <div class="footer-lang">
+      <button data-lang-btn="ru" class="active">RU</button>
+      <span class="sep">/</span>
+      <button data-lang-btn="en">EN</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <a href="#">Privacy</a>
+      <a href="#">Legal</a>
+    </div>
+    <span>&copy; AN.KI</span>
+    <span>YANA MAKHZIAN &mdash; FOUNDER &amp; AUTHOR</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AN.KI &mdash; Architecture</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-lang="ru">
+
+<header class="nav">
+  <a href="index.html" class="logotype">
+    <span class="mark">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#ab8a58" stroke-width="1"/></svg>
+    </span>
+    AN.KI
+  </a>
+  <nav class="links">
+    <a href="systems.html">SYSTEMS</a>
+    <a href="architecture.html" class="active">ARCHITECTURE</a>
+    <a href="tools.html">TOOLS</a>
+    <a href="image.html">IMAGE</a>
+    <a href="private.html">PRIVATE</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+  <div style="display:flex; align-items:center; gap:26px;">
+    <div class="lang-toggle">
+      <button data-lang-btn="ru" class="active">RU</button>
+      <span class="sep">/</span>
+      <button data-lang-btn="en">EN</button>
+    </div>
+    <button class="menu-toggle" id="menuOpen">MENU</button>
+  </div>
+</header>
+
+<div class="overlay-menu" id="overlayMenu">
+  <button class="om-close" id="menuClose">CLOSE &#10005;</button>
+  <a href="index.html">AN.KI</a>
+  <a href="systems.html">SYSTEMS</a>
+  <a href="architecture.html" class="active">ARCHITECTURE</a>
+  <a href="tools.html">TOOLS</a>
+  <a href="image.html">IMAGE</a>
+  <a href="private.html">PRIVATE</a>
+  <a href="about.html">ABOUT</a>
+  <div class="om-lang">
+    <button data-lang-btn="ru" class="active">RU</button>
+    <span class="sep">/</span>
+    <button data-lang-btn="en">EN</button>
+  </div>
+</div>
+
+<main>
+  <div class="hero-media hero-media--architecture">
+    <div class="hero-media-content">
+      <span class="eyebrow">ARCHITECTURE</span>
+      <h2 class="t" data-ru="АРХИТЕКТУРА СИСТЕМ"></h2>
+      <p class="lede t" data-ru="Создание новой конструкции вместо бесконечного исправления старой."></p>
+    </div>
+  </div>
+  <div class="blueprint post-hero">
+    <div class="container">
+      <div class="diagram-wrap">
+        <svg width="520" height="220" viewBox="0 0 520 220" fill="none">
+          <g stroke="#3a342a" stroke-width="1">
+            <line x1="60" y1="110" x2="200" y2="50"/>
+            <line x1="60" y1="110" x2="200" y2="170"/>
+            <line x1="200" y1="50" x2="340" y2="110"/>
+            <line x1="200" y1="170" x2="340" y2="110"/>
+            <line x1="340" y1="110" x2="460" y2="60"/>
+            <line x1="340" y1="110" x2="460" y2="160"/>
+          </g>
+          <g fill="#0b0a08" stroke="#ab8a58" stroke-width="1">
+            <circle cx="60" cy="110" r="6"/>
+            <circle cx="200" cy="50" r="4.5"/>
+            <circle cx="200" cy="170" r="4.5"/>
+            <circle cx="340" cy="110" r="6"/>
+            <circle cx="460" cy="60" r="4.5"/>
+            <circle cx="460" cy="160" r="4.5"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="content-block-wrap">
+        <div class="content-block">
+          <p class="t" data-ru="Существующие решения не всегда нужно улучшать."></p>
+          <p class="t" data-ru="Иногда сама система устроена таким образом, что желаемый результат внутри неё невозможен."></p>
+          <p class="t" data-ru="В таком случае я проектирую другую."></p>
+        </div>
+
+        <div class="content-block">
+          <span class="eyebrow">РАБОТА</span>
+          <p class="t" data-ru="Архитектура может включать:"></p>
+          <ul>
+          <li class="t" data-ru="определение задачи системы;"></li>
+          <li class="t" data-ru="фундаментальные принципы;"></li>
+          <li class="t" data-ru="структуру;"></li>
+          <li class="t" data-ru="механизмы;"></li>
+          <li class="t" data-ru="отношения между элементами;"></li>
+          <li class="t" data-ru="человеческое поведение внутри системы;"></li>
+          <li class="t" data-ru="ограничения;"></li>
+          <li class="t" data-ru="логику принятия решений;"></li>
+          <li class="t" data-ru="условия устойчивости;"></li>
+          <li class="t" data-ru="масштабирование;"></li>
+          <li class="t" data-ru="модель дальнейшей реализации."></li>
+          </ul>
+          <p class="t" data-ru="Содержание определяется конкретной системой, а не заранее заданным пакетом."></p>
+        </div>
+
+        <div class="content-block">
+          <span class="eyebrow">ДЛЯ КАКИХ СИСТЕМ</span>
+          <p class="t" data-ru="Цифровых. Культурных. Образовательных. Организационных. Социальных. Институциональных."></p>
+          <p class="t" data-ru="Список не является ограничением."></p>
+        </div>
+
+        <div class="content-block">
+          <span class="eyebrow">РЕЗУЛЬТАТ</span>
+          <p class="t" data-ru="Не набор рекомендаций."></p>
+          <p class="t" data-ru="Архитектура, по которой система может быть создана."></p>
+        </div>
+
+        <div class="service-wrap" style="padding:20px 0 100px; text-align:left; margin:0;">
+          <span class="price-tag t" data-ru="ОТ &euro;250 000"></span>
+          <p class="t" data-ru="Стоимость определяется масштабом и сложностью системы."></p>
+          <a href="questionnaire-architecture.html" class="btn t" data-ru="ЗАПОЛНИТЬ АНКЕТУ &rarr;"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <span class="logotype-sm">AN.KI</span>
+    <nav class="footer-links">
+      <a href="systems.html">SYSTEMS</a>
+      <a href="architecture.html">ARCHITECTURE</a>
+      <a href="tools.html">TOOLS</a>
+      <a href="image.html">IMAGE</a>
+      <a href="private.html">PRIVATE</a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+    <div class="footer-lang">
+      <button data-lang-btn="ru" class="active">RU</button>
+      <span class="sep">/</span>
+      <button data-lang-btn="en">EN</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <a href="#">Privacy</a>
+      <a href="#">Legal</a>
+    </div>
+    <span>&copy; AN.KI</span>
+    <span>YANA MAKHZIAN &mdash; FOUNDER &amp; AUTHOR</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
